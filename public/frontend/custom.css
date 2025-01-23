@@ -1,0 +1,19 @@
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    border-color: #000 !important;
+}
+
+.inflanar-header__button.h-with-lang-switch i {
+    color: #000;
+}
+
+.inflanar-header__button.h-with-lang-switch
+    .inflanar-header__lang
+    .select2-selection.select2-selection--single
+    span
+    b {
+    border-right-color: #000 !important;
+    border-bottom-color: #000 !important;
+}

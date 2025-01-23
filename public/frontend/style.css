@@ -151,7 +151,7 @@ Version:	1.0
 .inflanar-header__menu .nav-menu li.active a,
 #offcanvas-menu li a:hover,
 #offcanvas-menu li.active a {
-    color: #fe2c55;
+    color: var(--theme-primary);
 }
 
 .menu-right-search-bar {
@@ -231,7 +231,7 @@ Version:	1.0
 }
 
 .inflanar-header .navigation li .sub-menu li a:hover {
-    color: #fe2c55 !important;
+    color: var(--theme-primary) !important;
     padding: 7px 25px;
     margin-left: 5px;
 }
@@ -8677,7 +8677,7 @@ div.dataTables_wrapper div.dataTables_info {
 .currency-item {
     display: flex;
     align-items: center;
-    background: #fe2c550a !important;
+    background: #ffd3ac40 !important;
     border-radius: 8px;
     min-height: 40px !important;
     padding-left: 10px;
