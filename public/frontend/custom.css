@@ -90,6 +90,10 @@ input[type="checkbox"]:checked,
     color: #000;
 }
 
+.pack-action-btn:hover {
+    color: #000 !important;
+}
+
 .pack-feature svg path,
 .price-header-wrapper svg path {
     fill: var(--theme-primary);
