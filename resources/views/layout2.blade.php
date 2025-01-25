@@ -55,6 +55,7 @@
 
         <script src="{{ asset('frontend/js/flatpickr.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('frontend/css/flatpickr.min.css') }}">
+				<link rel="stylesheet" href="{{ asset('frontend/custom.css') }}">
 
         @if ($google_analytic->status == 1)
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $google_analytic->analytic_id }}"></script>

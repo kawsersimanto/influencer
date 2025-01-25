@@ -51,10 +51,109 @@
 }
 
 .offcanvas-logo img {
-    width: 40px;
+    max-width: 40px !important;
+    width: 40px !important;
     object-fit: contain;
 }
 
 #offcanvas-menu::before {
     background-color: transparent;
+}
+
+/* form input  */
+
+input[type="checkbox"]:checked,
+.price-filter .ui-slider-range {
+    background-color: var(--theme-primary);
+}
+
+.inflanar-btn--search img {
+    filter: invert(1);
+}
+
+.inflanar-search-form__service .inflanar-search-form__form {
+    border: 1px solid #eaeaea;
+    background: white;
+}
+
+.inflanar-service__price,
+.inflanar-service:hover .inflanar-service__price {
+    color: #000;
+}
+
+.inflanar-service:hover .inflanar-service__title a {
+    color: var(--theme-primary);
+}
+
+.pack-action-btn.highlighted-btn {
+    background-color: var(--theme-primary);
+    color: #000;
+}
+
+.pack-feature svg path,
+.price-header-wrapper svg path {
+    fill: var(--theme-primary);
+}
+
+.pack-name {
+    color: #000;
+}
+
+/* breadcrumb */
+.inflanar-breadcrumb__inner li.active a {
+    color: #000;
+}
+
+.inflanar-sidebar__category a:hover {
+    color: var(--theme-primary) !important;
+}
+
+.inflanar-pagination ul li a {
+    border-color: var(--theme-primary) !important;
+}
+
+.inflanar-pagination ul li a:hover,
+.inflanar-pagination ul li.active a {
+    background: var(--theme-primary);
+    color: #000 !important;
+    border-color: transparent !important;
+}
+
+.inflanar-pagination__button i {
+    color: #000;
+}
+
+.inflanar-influencer:hover .inflanar-influencer__title a {
+    color: #000;
+}
+
+/* login  */
+.inflanar-signin__options .list-group-item.active,
+.inflanar-signin__options .list-group-item:hover {
+    background: var(--theme-primary) !important;
+    border-color: transparent !important;
+    color: #000 !important;
+}
+
+.inflanar-signin__options a {
+    border: 1px solid var(--theme-primary) !important;
+}
+
+.inflanar-form-input input:hover,
+.inflanar-form-input input:focus,
+.inflanar-form-input textarea:hover,
+.inflanar-form-input textarea:focus,
+.select2-container .select2-selection--single:hover,
+.select2-container .select2-selection--single:focus {
+    border-color: var(--theme-primary) !important;
+}
+
+a,
+.inflanar-signin__check-inline label a {
+    color: #000;
+}
+
+a:hover,
+.inflanar-signin__check-inline label a:hover {
+    color: var(--theme-primary) !important;
 }
