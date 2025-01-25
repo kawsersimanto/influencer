@@ -39,7 +39,7 @@
 									<!-- Section TItle -->
 									<div class="inflanar-section__head inflanar-section__center mg-btm-20">
 										<span class="inflanar-section__badge inflanar-primary-color m-0" data-aos="fade-in" data-aos-delay="300">
-											<span>{{ $home_page->feature_title }}</span> <img src="{{ asset('frontend/img/in-section-vector.svg') }}">
+											<span>{{ $home_page->feature_title }}</span> <img src="{{ asset('frontend/img/in-section-vector2.svg') }}">
 										</span>
 										<h2 class="inflanar-section__title"  data-aos="fade-in" data-aos-delay="400">{{ $home_page->feature_header }}</h2>
 									</div>
@@ -136,7 +136,7 @@
 
 								<div class="inflanar-section__head mg-btm-20">
 									<span class="inflanar-section__badge inflanar-primary-color m-0">
-										<span>{{ $about_us->header }}</span> <img src="{{ asset('frontend/img/in-section-vector.svg') }}">
+										<span>{{ $about_us->header }}</span> <img src="{{ asset('frontend/img/in-section-vector2.svg') }}">
 									</span>
 									<h2 class="inflanar-section__title inflanar-section__title--medium  mg-btm-20" data-aos="fade-in" data-aos-delay="400">{{ $about_us->title }}</h2>
 									<p>{!! clean($about_us->description) !!}</p>
@@ -169,7 +169,7 @@
 						<!-- Section TItle -->
 						<div class="inflanar-section__head inflanar-section__center text-center mg-btm-20">
 							<span class="inflanar-section__badge  inflanar-primary-color m-0" data-aos="fade-in" data-aos-delay="300">
-								<span>{{ $home_page->working_title }}</span> <img src="{{ asset('frontend/img/in-section-vector.svg') }}">
+								<span>{{ $home_page->working_title }}</span> <img src="{{ asset('frontend/img/in-section-vector2.svg') }}">
 										</span>
 								<h2 class="inflanar-section__title"  data-aos="fade-in" data-aos-delay="400">{{ $home_page->working_header }}</h2>
 						</div>
@@ -358,7 +358,7 @@
 						<!-- Section TItle -->
 						<div class="inflanar-section__head inflanar-section__center mg-btm-20">
 							<span class="inflanar-section__badge inflanar-primary-color m-0" data-aos="fade-in" data-aos-delay="300">
-								<span>{{ $home_page->testimonial_title }}</span> <img src="{{ asset('frontend/img/in-section-vector.svg') }}">
+								<span>{{ $home_page->testimonial_title }}</span> <img src="{{ asset('frontend/img/in-section-vector2.svg') }}">
 							</span>
 							<h2 class="inflanar-section__title"  data-aos="fade-in" data-aos-delay="400">{{ $home_page->testimonial_header }}</h2>
 						</div>

@@ -36,7 +36,7 @@
                     <!-- Section TItle -->
                     <div class="inflanar-section__head inflanar-section__center mg-btm-20">
                         <span class="inflanar-section__badge inflanar-primary-color m-0" data-aos="fade-in" data-aos-delay="300">
-                            <span>{{__('admin.Subscription')}}</span> <img src="{{ asset('frontend/img/in-section-vector.svg') }}">
+                            <span>{{__('admin.Subscription')}}</span> <img src="{{ asset('frontend/img/in-section-vector2.svg') }}">
                         </span>
                         <h2 class="inflanar-section__title"  data-aos="fade-in" data-aos-delay="400">{{__('admin.Subscription Plan')}}</h2>
                     </div>

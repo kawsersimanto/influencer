@@ -520,13 +520,13 @@
 		<!-- End Footer -->
 
 		@auth('web')
-            <button class="wsus__message__button inflanar-btn inflanar-btn--header">
+            <button class="wsus__message__button inflanar-btn inflanar-btn--header custom-message-icon">
                 <span><img src="{{ asset('uploads/website-images/chat_icon.png') }}" alt="chat" class="img-fluid w-100"></span>
                 {{__('admin.Live Chat')}}
             </button>
         @else
 
-        <button class="wsus__message__button inflanar-btn inflanar-btn--header" onclick="sendNewMessagePrevLogin()">
+        <button class="wsus__message__button inflanar-btn inflanar-btn--header custom-message-icon" onclick="sendNewMessagePrevLogin()">
             <span><img src="{{ asset('uploads/website-images/chat_icon.png') }}" alt="chat" class="img-fluid w-100"></span>
             {{__('admin.Live Chat')}}
         </button>

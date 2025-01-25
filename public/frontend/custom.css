@@ -17,3 +17,44 @@
     border-right-color: #000 !important;
     border-bottom-color: #000 !important;
 }
+
+.h-with-lang-switch .inflanar-header__lang {
+    background: #ffd3ac40 !important;
+}
+
+.custom-message-icon img {
+    filter: invert(1);
+}
+
+.inflanar-hero__title span {
+    color: var(--theme-primary);
+}
+
+.inflanar-ptags__list a:hover {
+    background-color: var(--theme-primary) !important;
+    color: #000;
+}
+
+/* offcanvas menu  */
+[data-bs-target="#offcanvas-modal"],
+.offcanvas-toggler:hover,
+[data-bs-dismiss="modal"].btn-close {
+    background: var(--theme-primary) !important;
+}
+
+[data-bs-dismiss="modal"].btn-close i {
+    color: #000;
+}
+
+[data-bs-target="#offcanvas-modal"] .line {
+    background-color: #000;
+}
+
+.offcanvas-logo img {
+    width: 40px;
+    object-fit: contain;
+}
+
+#offcanvas-menu::before {
+    background-color: transparent;
+}
