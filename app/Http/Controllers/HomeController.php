@@ -47,34 +47,6 @@ class HomeController extends Controller
 {
     public function index(Request $request){
 
-        $setting = Setting::select('selected_theme')->first();
-        if($setting->selected_theme == 'all_theme'){
-            if($request->has('theme')){
-                $theme = $request->theme;
-                if($theme == 'one'){
-                    Session::put('selected_theme', 'theme_one');
-                }elseif($theme == 'two'){
-                    Session::put('selected_theme', 'theme_two');
-                }elseif($theme == 'three'){
-                    Session::put('selected_theme', 'theme_three');
-                }else{
-                    if(!Session::has('selected_theme')){
-                        Session::put('selected_theme', 'theme_one');
-                    }
-                }
-            }else{
-                Session::put('selected_theme', 'theme_one');
-            }
-        }else{
-            if($setting->selected_theme == 'theme_one'){
-                Session::put('selected_theme', 'theme_one');
-            }elseif($setting->selected_theme == 'theme_two'){
-                Session::put('selected_theme', 'theme_two');
-            }elseif($setting->selected_theme == 'theme_three'){
-                Session::put('selected_theme', 'theme_three');
-            }
-        }
-
         $seo_setting = SeoSetting::where('id', 1)->first();
 
         $slider = SliderOne::first();
@@ -101,20 +73,8 @@ class HomeController extends Controller
 
         $influencers = User::where(['status' => 'enable' , 'is_banned' => 'no', 'is_influencer' => 'yes'])->where('email_verified_at', '!=', null)->orderBy('id','desc')->select('id','name','username','designation','total_follower','total_following','image','status','is_banned','is_influencer')->get()->take(8);
 
-        if ($selected_theme == 'theme_one'){
-            return view('index')->with([
-                'seo_setting' => $seo_setting,
-                'slider' => $slider,
-                'our_feature' => $our_feature,
-                'influencers' => $influencers,
-                'featured_services' => $featured_services,
-                'working_proccess' => $working_proccess,
-                'partners' => $partners,
-                'faqs' => $faqs,
-                'blogs' => $blogs,
-            ]);
-        }elseif($selected_theme == 'theme_two'){
-            return view('index2')->with([
+
+            return view('new_home')->with([
                 'seo_setting' => $seo_setting,
                 'slider' => $slider,
                 'categories' => $categories,
@@ -128,37 +88,7 @@ class HomeController extends Controller
                 'faqs' => $faqs,
                 'blogs' => $blogs,
             ]);
-        }elseif($selected_theme == 'theme_three'){
-            return view('index3')->with([
-                'seo_setting' => $seo_setting,
-                'slider' => $slider,
-                'categories' => $categories,
-                'our_feature' => $our_feature,
-                'influencers' => $influencers,
-                'featured_services' => $featured_services,
-                'working_proccess' => $working_proccess,
-                'why_choose_us' => $why_choose_us,
-                'testimonials' => $testimonials,
-                'partners' => $partners,
-                'faqs' => $faqs,
-                'blogs' => $blogs,
-            ]);
-        }else{
-            return view('index')->with([
-                'seo_setting' => $seo_setting,
-                'slider' => $slider,
-                'categories' => $categories,
-                'our_feature' => $our_feature,
-                'influencers' => $influencers,
-                'featured_services' => $featured_services,
-                'working_proccess' => $working_proccess,
-                'why_choose_us' => $why_choose_us,
-                'testimonials' => $testimonials,
-                'partners' => $partners,
-                'faqs' => $faqs,
-                'blogs' => $blogs,
-            ]);
-        }
+
 
     }
 

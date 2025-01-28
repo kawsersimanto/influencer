@@ -165,7 +165,7 @@
   <script src="{{ asset('backend/tinymce/js/tinymce/tinymce.min.js') }}"></script>
 
 
-  @vite('resources/js/app.js')
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script>
         @if(Session::has('messege'))

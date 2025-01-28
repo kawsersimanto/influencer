@@ -90,6 +90,8 @@
         /></noscript>
         @endif
 
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 	</head>
 
     <style>
@@ -667,8 +669,6 @@
 
         <!-- Lightbox -->
         <script src="{{ asset('frontend/js/glightbox.min.js') }}"></script>
-
-		@vite('resources/js/app.js')
 
         <script>
             // Lightbox Gallery

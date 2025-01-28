@@ -1222,7 +1222,7 @@ object {
 }
 .inflanar-btn-full:hover {
     background: var(--theme-primary);
-    color: #000;
+    color: #000 !important;
 }
 .inflanar-btn-full.inflanar-btn-full--v2 {
     background: var(--theme-primary);
