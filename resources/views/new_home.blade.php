@@ -304,6 +304,27 @@
 </section>
 <!-- Any -->
 
+<!-- Partners -->
+<section class="pb-28">
+  <div class="container">
+    <div class="brands">
+      <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2">
+        @foreach ($partners as $partner)
+          <div class="brands__single justify-center">
+            <a href="{{ $partner->link ? $partner->link : 'javascript:;' }}"><img
+                src="{{ asset($partner->logo) }}"></a>
+          </div>
+          @if ($loop->iteration >= 5)
+            @break
+          @endif
+        @endforeach
+    
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Partners -->
+
 {{-- search and features --}}
 <section class="pb-20">
   <div class="container">
@@ -444,89 +465,6 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </section>
 <!-- About section -->
 
-<!-- Viideo CTA -->
-<section class="pd-top-90 pd-btm-120 ">
-<div class="container inflanar-container-medium">
-<div class="row ">
-<div class="col-12">
-  <div class="funfacts inflanar-row-gap">
-    <!-- FunFact Box -->
-    <div class="funfacts__box inflanar-section-shape5 inflanar-bg-cover" data-aos="fade-up"
-      data-aos-delay="200">
-      <div class="funfacts__column">
-        <!-- Fun Fact Sinlge -->
-        <div class="funfacts__card mg-top-30">
-          <div class="funfacts__icon">
-            <img src="{{ asset($home_page->facebook_image) }}">
-          </div>
-          <div class="funfacts__number">
-            <h4 class="funfacts__title"><b>{{ $home_page->facebook_follower }}
-              </b><span>{{ __('admin.Followers') }}</span></h4>
-          </div>
-        </div>
-        <!-- End Fun Fact Sinlge -->
-        <!-- Fun Fact Sinlge -->
-        <div class="funfacts__card mg-top-30">
-          <div class="funfacts__icon">
-            <img src="{{ asset($home_page->twitter_image) }}">
-          </div>
-          <div class="funfacts__number">
-            <h4 class="funfacts__title"><b>{{ $home_page->twitter_follower }}
-              </b><span>{{ __('admin.Followers') }}</span></h4>
-          </div>
-        </div>
-        <!-- End Fun Fact Sinlge -->
-      </div>
-      <div class="funfacts__column funfacts__column__last">
-        <!-- Fun Fact Sinlge -->
-        <div class="funfacts__card mg-top-30">
-          <div class="funfacts__icon">
-            <img src="{{ asset($home_page->tiktok_image) }}">
-          </div>
-          <div class="funfacts__number">
-            <h4 class="funfacts__title"><b>{{ $home_page->tiktok_follower }}
-              </b><span>{{ __('admin.Followers') }}</span></h4>
-          </div>
-        </div>
-        <!-- End Fun Fact Sinlge -->
-        <!-- Fun Fact Sinlge -->
-        <div class="funfacts__card mg-top-30">
-          <div class="funfacts__icon">
-            <img src="{{ asset($home_page->instagram_image) }}">
-          </div>
-          <div class="funfacts__number">
-            <h4 class="funfacts__title"><b>{{ $home_page->instagram_follower }}
-              </b><span>{{ __('admin.Followers') }}</span></h4>
-          </div>
-        </div>
-        <!-- End Fun Fact Sinlge -->
-      </div>
-    </div>
-    <!-- End FunFact Box -->
-
-    <!-- Brands -->
-    <div class="brands" data-aos="fade-up" data-aos-delay="400">
-      <h2 class="inflanar-section__title mg-btm-20">{!! strip_tags(clean($home_page->partner_title), '<span>') !!}</span></h2>
-      <div class="row">
-        @foreach ($partners as $partner)
-          <div class="col-lg-4 col-md-4 col-6 mg-top-30">
-            <div class="brands__single">
-              <a href="{{ $partner->link ? $partner->link : 'javascript:;' }}"><img
-                  src="{{ asset($partner->logo) }}"></a>
-            </div>
-          </div>
-        @endforeach
-
-      </div>
-    </div>
-    <!-- End Brands -->
-  </div>
-</div>
-</div>
-</div>
-</section>
-<!-- End Viideo CTA -->
-
 <!-- Trusted By 110, 000+ Brands -->
 <section class="pt-20 pb-10">
   <div class="container">
@@ -620,7 +558,7 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 <!-- Case Studies -->
 
 <!-- Testimonials -->
-<section class="py-40">
+<section class="py-20">
   <div class="container">
     <!-- Section Title -->
     <div class="flex justify-between items-center mb-12">
