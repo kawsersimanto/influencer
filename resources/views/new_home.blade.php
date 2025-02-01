@@ -10,11 +10,11 @@
 		<!-- inflanar Hero -->
 		<section class="py-40">
 			<div class="container">
-				<div class="flex flex-col gap-3 justify-center">
+				<div class="flex flex-col justify-center">
 					<h1 class="text-center lg:text-[41px] font-bold">Influencer Marketing Made Easy</h1>
 					<div>
-						<p class="text-center">Find and hire top Instagram, TikTok, YouTube, and UGC influencers to create unique content for your brand</p>
-						<form action="">
+						<p class="text-center mt-4 mb-12">Find and hire top Instagram, TikTok, YouTube, and UGC influencers to create unique content for your brand</p>
+						<form action="" class="max-w-[1200px] mx-auto">
 							<select name="search" id="">
 								<option>Select a platform</option>
 								<option value="any">Any</option>

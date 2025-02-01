@@ -278,8 +278,8 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12">
-          <div class="py-3 relative">
-            <div class="justify-between">
+          <div class="py-2">
+            <div class="inflanar-header__group justify-between">
               <div class="inflanar-header__logo">
                 <a href="{{ route('home') }}"><img src="{{ asset($setting->logo) }}" alt="#"></a>
               </div>
@@ -287,33 +287,26 @@
                 <div class="navbar">
                   <div class="nav-item">
                     <!-- Main Menu -->
-                    <ul class="nav-menu menu navigation list-none font-agrandir">
-                      <li><a href="{{ route('services') }}">Search</a>
-                      </li>
-                      <li><a href="#how-it-works">How it Works</a>
-                      </li>
-                      <li><a href="{{ route('pricing-plan') }}">Pricing</a>
-                      </li>
-                      <li><a href="{{ route('login') }}">Login</a>
-                      </li>
-                      @guest('web')
-                        <a href="{{ route('login') }}" class="me-3 text-[#F7BEA4]"><span>
-                            Join as Creator</span></a>
-                        <a href="{{ route('login') }}" class="text-[#F7BEA4]"><span>
-                            Join as Influencer</span></a>
+                    <ul class="nav-menu menu navigation list-none">
+                      @if ($setting->selected_theme == 'all_theme')
+                        <li class="menu-item-has-children"><a
+                            href="{{ route('home', ['theme' => 'one']) }}">{{ __('admin.Home') }}</a>
+                          <ul class="sub-menu">
+                            <li><a href="{{ route('home', ['theme' => 'one']) }}">{{ __('admin.Homepage V1') }}</a>
+                            </li>
+                            <li><a href="{{ route('home', ['theme' => 'two']) }}">{{ __('admin.Homepage V2') }}</a>
+                            </li>
+                            <li><a href="{{ route('home', ['theme' => 'three']) }}">{{ __('admin.Homepage V3') }}</a>
+                            </li>
+                          </ul>
+                        </li>
                       @else
-                        @php
-                          $auth_user = Auth::guard('web')->user();
-                        @endphp
-                        @if ($auth_user->is_influencer == 'yes')
-                          <a href="{{ route('influencer.dashboard') }}"
-                            class="inflanar-btn inflanar-btn--header"><span>{{ __('admin.Dashboard') }}</span></a>
-                        @else
-                          <a href="{{ route('user.dashboard') }}"
-                            class="inflanar-btn inflanar-btn--header"><span>{{ __('admin.Dashboard') }}</span></a>
-                        @endif
-                      @endguest
-                      {{-- <li><a href="{{ route('influencers') }}">{{ __('admin.Influencers') }}</a></li>
+                        <li><a href="{{ route('home') }}">{{ __('admin.Home') }}</a></li>
+                      @endif
+
+
+
+                      <li><a href="{{ route('influencers') }}">{{ __('admin.Influencers') }}</a></li>
 
                       <li><a href="{{ route('services') }}">{{ __('admin.Services') }}</a></li>
 
@@ -346,8 +339,25 @@
                             </li>
                           @endforeach
                         </ul>
-                      </li> --}}
-                      {{-- <li><a href="{{ route('contact-us') }}">{{ __('admin.Contact') }}</a></li> --}}
+                      </li>
+                      <li><a href="{{ route('contact-us') }}">{{ __('admin.Contact') }}</a></li>
+                      @guest('web')
+                        <a href="{{ route('login') }}" class="me-3"><span>
+                            Join as Creator</span></a>
+                        <a href="{{ route('login') }}" class=""><span>
+                            Join as Influencer</span></a>
+                      @else
+                        @php
+                          $auth_user = Auth::guard('web')->user();
+                        @endphp
+                        @if ($auth_user->is_influencer == 'yes')
+                          <a href="{{ route('influencer.dashboard') }}"
+                            class="inflanar-btn inflanar-btn--header"><span>{{ __('admin.Dashboard') }}</span></a>
+                        @else
+                          <a href="{{ route('user.dashboard') }}"
+                            class="inflanar-btn inflanar-btn--header"><span>{{ __('admin.Dashboard') }}</span></a>
+                        @endif
+                      @endguest
                     </ul>
                     <!-- End Main Menu -->
                   </div>
@@ -358,12 +368,67 @@
               data-bs-target="#offcanvas-modal"><span class="line"></span><span class="line"></span><span
                 class="line"></span>
             </button>
+            <div class="inflanar-header__button h-with-lang-switch">
+
+
+              {{-- <div class="currency-item">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <form action="{{ route('currency-switcher') }}" id="currency_swithcer_form">
+                  <!-- Currency Dropdown -->
+                  <select name="currency_code" id="currency_swithcer"
+                    class="form-select form-select-lg mb-3 inflanar-header__lang--list"
+                    aria-label=".form-select-lg example">
+                    @foreach ($currency_list as $currency_item)
+                      @if (Session::get('currency_code'))
+                        <option {{ Session::get('currency_code') == $currency_item->currency_code ? 'selected' : '' }}
+                          value="{{ $currency_item->currency_code }}">{{ $currency_item->currency_name }}</option>
+                      @else
+                        <option value="{{ $currency_item->currency_code }}">{{ $currency_item->currency_name }}
+                        </option>
+                      @endif
+                    @endforeach
+
+
+                  </select>
+                </form>
+              </div>
+
+              <div class="qnav-btn-item">
+                <!-- Language Dropdown -->
+                <form action="{{ route('language-switcher') }}" id="lang_swithcer_form">
+                  <div class="inflanar-header__lang">
+                    <i class="fas fa-globe"></i>
+                    <select id="lang_swithcer" class="inflanar-header__lang--list" name="lang_code">
+                      @if (Session::get('front_lang'))
+                        @foreach ($language_list as $language)
+                          <option {{ Session::get('front_lang') == $language->lang_code ? 'selected' : '' }}
+                            value="{{ $language->lang_code }}">{{ $language->lang_name }}</option>
+                        @endforeach
+                      @else
+                        @foreach ($language_list as $language)
+                          <option value="{{ $language->lang_code }}">{{ $language->lang_name }}</option>
+                        @endforeach
+                      @endif
+                    </select>
+                  </div>
+                </form>
+              </div> --}}
+
+
+              <div class="qnav-btn-item">
+
+
+              </div>
+
+
+
+
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
   </div>
 </header>
 <!-- End Header -->

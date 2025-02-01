@@ -14,6 +14,13 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                agrandir: ["agrandir-regular"],
+            },
+            backgroundImage: {
+                "sunset-gradient":
+                    "linear-gradient(135deg, #F7BEA4, #F49C8E, #F07575)",
+                "peach-gold-gradient":
+                    "linear-gradient(135deg, #F7BEA4, #FFD699)",
             },
         },
     },
