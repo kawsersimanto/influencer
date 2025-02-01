@@ -210,3 +210,7 @@ a:hover,
 .collapse {
     visibility: unset !important;
 }
+
+body {
+    font-family: agrandir-regular;
+}

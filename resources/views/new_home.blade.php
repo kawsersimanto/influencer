@@ -207,8 +207,8 @@
 </section>
 <!-- TikTok -->
 
-<!-- Case Studies -->
-<section id="blog" class="blog-area inflanar-bg-cover py-10">
+<!-- Categories Studies -->
+<section id="categories" class="blog-area inflanar-bg-cover py-10">
   <div class="blog-bg-pattern">
   <div class="container">
   
@@ -246,11 +246,11 @@
   
   </div>
   </div>
-  </section>
-  <!-- Case Studies -->
+</section>
+<!-- Categories Studies -->
 
 <!-- Any -->
-<section class="py-10">
+<section class="pt-10 pb-20">
 <div class="container">
 <div class="flex justify-between items-center">
   <!-- Section Title -->
@@ -303,6 +303,56 @@
 </div>
 </section>
 <!-- Any -->
+
+<section class="pb-20">
+  <div class="container">
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-[80px]">
+      <div class="flex flex-col items-start">
+        <span class="px-4 py-2 rounded-[12px] shadow-light-shadow bg-peach-gold-gradient font-agrandir">Search</span>
+        <h2 class="font-semibold text-3xl md:mt-5 mt-3 md:mb-16 mb-10">Find and Hire Influencers in Seconds on the Marketplace</h2>
+        <div class="flex flex-col md:gap-12 gap-8">
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Search Influencer</h3>
+            <p>Search thousands of vetted Instagram, TikTok, and YouTube influencers.</p>
+          </div>
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Purchase & Chat Securely</h3>
+            <p>Safely purchase and communicate through Collabstr. We hold your payment until the work is completed.</p>
+          </div>
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Receive Quality Content</h3>
+            <p>Receive your high-quality content from influencers directly through the platform.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="{{ asset("frontend/new-img/marketplace.png") }}" alt="Find and Hire Influencers in Seconds on the Marketplace">
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-3 lg:pt-32 pt-20">
+      <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
+        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">No Upfront Cost</h3>
+        <p class="text-sm">Search influencers for free. No subscriptions, contracts or hidden fees.</p>
+      </div>
+      <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
+        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">Vetted Influencers</h3>
+        <p class="text-sm">Instantly chat with influencers and stay in touch throughout the whole transaction.</p>
+      </div>
+      <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
+        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">Instant Chat</h3>
+        <p class="text-sm">Instantly chat with influencers and stay in touch throughout the whole transaction.</p>
+      </div>
+      <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
+        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">Secure Purchases</h3>
+        <p class="text-sm">Your money is held safely until you approve the influencer’s work.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Viideo CTA -->
 <section
