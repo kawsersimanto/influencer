@@ -162,6 +162,12 @@ a:hover,
     color: var(--theme-primary) !important;
 }
 
+/* header  */
+
+#active-sticky.is-sticky .inflanar-header__middle {
+    box-shadow: none !important;
+}
+
 /* search css  */
 
 .home-search .select2-container--default .select2-selection--single,

@@ -47,14 +47,13 @@ class HomeController extends Controller
 {
   public function index(Request $request)
   {
-
     $seo_setting = SeoSetting::where('id', 1)->first();
     $slider = SliderOne::first();
     $our_feature = OurFeature::first();
     $working_proccess = WorkingProccess::first();
     $partners = Partner::all();
     $blogs = Blog::with('author')->where('show_homepage', 'yes')->orderBy('id', 'desc')->get();
-    $featured_services = Service::with('category', 'influencer')->where(['status' => 'active', 'approve_by_admin' => 'enable', 'is_banned' => 'disable'])->orderBy('id', 'desc')->get()->take(8);
+    $featured_services = Service::with('category', 'influencer')->where(['status' => 'active', 'approve_by_admin' => 'enable', 'is_banned' => 'disable'])->orderBy('id', 'desc')->get()->take(4);
     $categories = Category::where('status', 'active')->get();
     $why_choose_us = WhyChooseUs::first();
     $testimonials = Testimonial::orderBy('id', 'desc')->get();
