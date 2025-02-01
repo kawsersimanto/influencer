@@ -207,6 +207,48 @@
 </section>
 <!-- TikTok -->
 
+<!-- Case Studies -->
+<section id="blog" class="blog-area inflanar-bg-cover py-10">
+  <div class="blog-bg-pattern">
+  <div class="container">
+  
+  <div class="flex justify-between items-center mb-4">
+    <!-- Section Title -->
+    <div class="max-w-[300px]">
+      <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+        Categories
+      </h2>
+    </div>
+  </div>
+  
+  
+  <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+    @foreach ($categories as $category)
+    {{-- {{ dd($category) }} --}}
+        <div class="group">
+          <div class="rounded-xl overflow-hidden relative">
+            <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+            <img src="{{ asset($category->icon) }}"
+              class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+              alt="{{ $category->slug }}">
+            <div class="absolute md:left-[30px] left-[10px] md:bottom-[30px] bottom-[10px] md:right-[30px] right-[10px] flex items-center gap-1 z-[3]">
+              <p class="text-[20px] capitalize text-white font-agrandir">
+                {{ $category->slug }}
+              </p>
+            </div>
+          </div>
+        </div>
+        @if ($loop->iteration >= 4)
+          @break
+        @endif
+  @endforeach
+  </div>
+  
+  </div>
+  </div>
+  </section>
+  <!-- Case Studies -->
+
 <!-- Any -->
 <section class="py-10">
 <div class="container">
