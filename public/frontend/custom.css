@@ -161,3 +161,40 @@ a:hover,
 .inflanar-signin__check-inline label a:hover {
     color: var(--theme-primary) !important;
 }
+
+/* search css  */
+
+.home-search .select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    border: none !important;
+}
+
+@media (max-width: 767px) {
+    .home-search .select2-container--default .select2-selection--single,
+    .select2-container--default .select2-selection--multiple {
+        padding: 0 !important;
+    }
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+    height: 22px !important;
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    background-color: #fdd3ae !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.select2-selection__rendered li button {
+    border: none !important;
+    color: black !important;
+}
+
+.select2-container--open .select2-dropdown--below,
+.select2-container--open .select2-dropdown--above {
+    border-radius: 12px;
+    overflow: hidden;
+}

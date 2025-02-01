@@ -11,11 +11,13 @@
 		<section class="py-40">
 			<div class="container">
 				<div class="flex flex-col justify-center">
-					<h1 class="text-center lg:text-[41px] font-bold">Influencer Marketing Made Easy</h1>
+					<h1 class="text-center md:text-[41px] text-[34px] font-bold">Influencer Marketing Made Easy</h1>
 					<div>
 						<p class="text-center mt-4 mb-12">Find and hire top Instagram, TikTok, YouTube, and UGC influencers to create unique content for your brand</p>
-						<form action="" class="max-w-[1200px] mx-auto">
-							<select name="search" id="">
+						<form action="{{ route('services', 'search, categories') }}" class="shadow-light-shadow sm:rounded-[50px] rounded-[24px] max-w-[1200px] mx-auto gap-2 flex sm:flex-row flex-col items-center p-2 home-search" method="GET">
+							@csrf
+							@method("GET")
+							<select name="search" id="search">
 								<option>Select a platform</option>
 								<option value="any">Any</option>
                 <option value="instagram">Instagram</option>
@@ -24,6 +26,16 @@
                 <option value="youtube">YouTube</option>
                 <option value="twitter">Twitter</option>
               </select>
+							<span class="sm:h-[20px] h-[1px] sm:w-[2px] w-full bg-slate-100"></span>
+							<select multiple name="categories[]" data-placeholder="Category">
+									<option value="javascript">JavaScript</option>
+									<option value="javascript">C/C++</option>
+									<option value="javascript">Java</option>
+									<option value="javascript">Kotlin</option>
+								</select>
+								
+							<button type="submit" class="bg-main flex-shrink-0 h-[48px] rounded-[50px] border-0 sm:w-[48px] w-full flex items-center justify-center">
+								<i class="fa-solid fa-magnifying-glass text-xl"></i></button>
 						</form>
 					</div>
 				</div>
