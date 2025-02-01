@@ -2,6 +2,7 @@
 
 namespace Modules\Service\Entities;
 
+use App\Models\Platform;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\User;
@@ -15,9 +16,14 @@ class Service extends Model
 
     protected $fillable = [];
 
-    protected $appends = ['title','description','features','seo_title','seo_description','average_rating','total_review'];
+    protected $appends = ['title','description','features','seo_title','seo_description','average_rating','total_review', 'platform_id'];
 
     protected $hidden = ['front_translate'];
+
+    public function platform()
+    {
+        return $this->belongsTo(Platform::class);
+    }
 
     protected static function newFactory()
     {
