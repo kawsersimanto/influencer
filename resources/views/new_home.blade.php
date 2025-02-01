@@ -386,6 +386,36 @@
 </section>
 {{-- campaign and features --}}
 
+{{-- Track --}}
+<section class="pt-20 pb-20">
+  <div class="container">
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-[80px]">
+      <div class="flex flex-col items-start">
+        <span class="px-4 py-2 rounded-[12px] shadow-light-shadow bg-peach-gold-gradient font-agrandir">Track</span>
+        <h2 class="font-semibold text-3xl md:mt-5 mt-3 md:mb-16 mb-10">Track Post Analytics and Performance in Real Time</h2>
+        <div class="flex flex-col md:gap-12 gap-8">
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">One-Click Tracking</h3>
+            <p>Track Instagram, TikTok, and YouTube content in real time from a single dashboard. Say goodbye to manual tracking and messy spreadsheets.</p>
+          </div>
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Advanced Analytics & Reporting</h3>
+            <p>Analyze content performance over time, including impressions, engagement and more. Organize performance by campaign and effortlessly build reports.</p>
+          </div>
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Fully Automated</h3>
+            <p>Metrics are updated every 24 hours, ensuring performance data is always up-to-date.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="{{ asset("frontend/new-img/tracking.png") }}" alt="Find and Hire Influencers in Seconds on the Marketplace">
+      </div>
+    </div>
+  </div>
+</section>
+{{-- Track --}}
+
 <!-- Viideo CTA -->
 <section
 class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-top-90 pd-btm-120 inflanar-section-shape2">
