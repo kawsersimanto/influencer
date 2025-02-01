@@ -37,6 +37,7 @@ use App\Models\MultiCurrency;
 
 use App\Helpers\MailHelper;
 use App\Mail\SendContactMessage;
+use App\Models\Platform;
 use Str, Mail, Hash, Auth, Session, Config;
 
 use App\Rules\Captcha;
@@ -53,12 +54,13 @@ class HomeController extends Controller
     $working_proccess = WorkingProccess::first();
     $partners = Partner::all();
     $blogs = Blog::with('author')->where('show_homepage', 'yes')->orderBy('id', 'desc')->get();
-    $featured_services = Service::with('category', 'influencer', 'platform')->where(['status' => 'active', 'approve_by_admin' => 'enable', 'is_banned' => 'disable'])->orderBy('id', 'desc')->get()->take(4);
+    $featured_services = Service::with('category', 'influencer', 'platform')->where(['status' => 'active', 'approve_by_admin' => 'enable', 'is_banned' => 'disable'])->orderBy('id', 'desc')->get();
     $categories = Category::where('status', 'active')->get();
     $why_choose_us = WhyChooseUs::first();
     $testimonials = Testimonial::orderBy('id', 'desc')->get();
     $faqs = Faq::orderBy('id', 'desc')->get();
     $influencers = User::where(['status' => 'enable', 'is_banned' => 'no', 'is_influencer' => 'yes'])->where('email_verified_at', '!=', null)->orderBy('id', 'desc')->select('id', 'name', 'username', 'designation', 'total_follower', 'total_following', 'image', 'status', 'is_banned', 'is_influencer')->get()->take(8);
+    $platforms = Platform::all();
 
     return view('new_home')->with([
       'seo_setting' => $seo_setting,
@@ -73,6 +75,7 @@ class HomeController extends Controller
       'partners' => $partners,
       'faqs' => $faqs,
       'blogs' => $blogs,
+      "platforms" => $platforms
     ]);
   }
 
