@@ -47,75 +47,41 @@
   <!-- End inflanar Hero -->
 
   <!-- Top Influencers -->
-  <section class="pt-20">
+  <section class="py-20">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- Section TItle -->
-          <div class="mb-4">
-            <h2 class="text-2xl font-medium" data-aos="fade-in" data-aos-delay="300">
-              Featured
-            </h2>
-            <p>Hire top influencers across all platforms</p>
-          </div>
-        </div>
-      </div>
-      <div class="grid grid-cols-4 gap-4">
+			<div class="flex justify-between items-center">
+				<!-- Section TItle -->
+				<div class="mb-4 max-w-[300px]">
+					<h2 class="text-2xl font-medium" data-aos="fade-in" data-aos-delay="300">
+						Featured
+					</h2>
+					<p>Hire top influencers across all platforms</p>
+				</div>
+				<a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+			</div>
+      <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
         @foreach ($featured_services as $index => $featured_service)
           <div>
             <a href="#" class="group">
               <div class="rounded-xl overflow-hidden relative">
                 <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
                 <img src={{ asset($featured_service->thumbnail_image) }}
-                  class="h-[320px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+                  class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
                   alt="">
                 <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
-                  <p class="text-sm text-white font-agrandir">
+                  <p class="text-sm text-white font-agrandir me-1">
                     @if ($featured_service->influencer)
                       {{ $featured_service->influencer->name }}
                     @endif
                   </p>
-                  <div class="inflanar-service__author--rating">
+                  <div class="flex items-center gap-2">
                     @php
                       if ($featured_service->total_review > 0) {
                           $average = $featured_service->average_rating;
-
-                          $int_average = intval($average);
-
-                          $next_value = $int_average + 1;
-                          $review_point = $int_average;
-                          $half_review = false;
-                          if ($int_average < $average && $average < $next_value) {
-                              $review_point = $int_average + 0.5;
-                              $half_review = true;
-                          }
                       }
                     @endphp
-                    <div class="inflanar-service__author--star">
-                      @if ($featured_service->total_review > 0)
-                        @for ($i = 1; $i <= 5; $i++)
-                          @if ($i <= $review_point)
-                            <span><i class="fa-solid fa-star"></i></span>
-                          @elseif ($i > $review_point)
-                            @if ($half_review == true)
-                              <span><i class="fa-solid fa-star-half-stroke"></i></span>
-                              @php
-                                $half_review = false;
-                              @endphp
-                            @else
-                              <span><i class="fa-regular fa-star"></i></span>
-                            @endif
-                          @endif
-                        @endfor
-                      @else
-                        <span><i class="fa-regular fa-star"></i></span>
-                        <span><i class="fa-regular fa-star"></i></span>
-                        <span><i class="fa-regular fa-star"></i></span>
-                        <span><i class="fa-regular fa-star"></i></span>
-                        <span><i class="fa-regular fa-star"></i></span>
-                      @endif
-
-                    </div>
+										<i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
+										<span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
                   </div>
                 </div>
               </div>
@@ -128,12 +94,6 @@
           </div>
         @endforeach
 
-      </div>
-      <div class="row mg-top-40" data-aos="fade-up" data-aos-delay="600">
-        <div class="col-12 d-flex justify-content-center">
-          <a href="{{ route('influencers') }}"
-            class="inflanar-btn inflanar-btn__big"><span>{{ __('admin.View All') }}</span></a>
-        </div>
       </div>
     </div>
   </section>
