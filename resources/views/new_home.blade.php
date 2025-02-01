@@ -304,6 +304,7 @@
 </section>
 <!-- Any -->
 
+{{-- search and features --}}
 <section class="pb-20">
   <div class="container">
     <div class="grid md:grid-cols-2 grid-cols-1 gap-[80px]">
@@ -353,6 +354,37 @@
     </div>
   </div>
 </section>
+{{-- search and features --}}
+
+{{-- campaign and features --}}
+<section class="pt-20 pb-20">
+  <div class="container">
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-[80px] items-center">
+      <div>
+        <img src="{{ asset("frontend/new-img/campaign.png") }}" alt="Find and Hire Influencers in Seconds on the Marketplace">
+      </div>
+      <div class="flex flex-col items-start">
+        <span class="px-4 py-2 rounded-[12px] shadow-light-shadow bg-peach-gold-gradient font-agrandir">Campaigns</span>
+        <h2 class="font-semibold text-3xl md:mt-8 mt-3 md:mb-16 mb-10">Post Campaigns and Have 170,000+ Influencers Come to You</h2>
+        <div class="flex flex-col md:gap-12 gap-8">
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Set Targeting</h3>
+            <p>Specify demographics including niche, location and following size of the influencers you want to target.</p>
+          </div>
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Post Campaign</h3>
+            <p>Centralize your images, requirements, and more in a campaign brief sent to 170,000 influencers.</p>
+          </div>
+          <div>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Influencers Apply</h3>
+            <p>Targeted influencers submit their pricing, and you choose who to collaborate with.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{-- campaign and features --}}
 
 <!-- Viideo CTA -->
 <section
