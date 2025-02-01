@@ -61,7 +61,7 @@
       </div>
       <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
         @foreach ($featured_services as $index => $featured_service)
-          <a href="#" class="group">
+          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
             <div class="rounded-xl overflow-hidden relative">
               <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
               <img src="{{ asset($featured_service->thumbnail_image) }}"
