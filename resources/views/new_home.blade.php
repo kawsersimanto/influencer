@@ -416,7 +416,7 @@
 </section>
 {{-- Track --}}
 
-<!-- Viideo CTA -->
+<!-- About section -->
 <section
 class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-top-90 pd-btm-120 inflanar-section-shape2">
 <div class="container inflanar-container-medium">
@@ -442,7 +442,7 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </div>
 </div>
 </section>
-<!-- End Viideo CTA -->
+<!-- About section -->
 
 <!-- Viideo CTA -->
 <section class="pd-top-90 pd-btm-120 ">
@@ -618,6 +618,45 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </div>
 </section>
 <!-- Case Studies -->
+
+<!-- Testimonials -->
+<section class="py-40">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="flex justify-between items-center mb-12">
+      <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+        110,000+ Brands Work With Influencers on Brandfam
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-12">
+      <div class="flex flex-col gap-4">
+        <div>
+          <i class="fa-solid fa-quote-left text-3xl mb-2 text-main"></i>
+          <h3 class="italic font-semibold text-black">5 stars from a creator and a brand</h3>
+        </div>
+        <p>I've used Brandfam from both the Creator side and the Brand side! It is extremely user-friendly and has lead to some great relationships with creators/brands I wouldn't have been connected to otherwise. Love the platform!</p>
+        <p class="italic font-semibold text-black">Layla - Influencer & Founder</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div>
+          <i class="fa-solid fa-quote-left text-3xl mb-2 text-main"></i>
+          <h3 class="italic font-semibold text-black">Best platform to connect with influencers</h3>
+        </div>
+        <p>Best platform to connect with influencers and content creators. I've signed up to many platforms, collabstr is the easiest to use and gives the best results for my brand.</p>
+        <p class="italic font-semibold text-black">Myriam - Founder of BBeyond</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div>
+          <i class="fa-solid fa-quote-left text-3xl mb-2 text-main"></i>
+          <h3 class="italic font-semibold text-black">Great way to generate content</h3>
+        </div>
+        <p>Been using Collabstr to generate content for our seasonal clothing lines. Super easy for us to search for relevant influencers and pay them. We save at least 10-20 hours a month on this.</p>
+        <p class="italic font-semibold text-black">Courtney - Marketer</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Testimonials -->
 
 <!-- Youtube -->
 <section class="py-10">
