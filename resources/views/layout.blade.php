@@ -999,6 +999,7 @@
 
 {{-- end live chat --}}
 
+@stack('scripts')
 
 </body>
 

@@ -44,12 +44,12 @@
 <!-- End inflanar Hero -->
 
 <!-- Featured -->
-<section class="py-10">
+<section class="pt-20 pb-10">
     <div class="container">
       <div class="flex justify-between items-center">
         <!-- Section Title -->
         <div class="mb-4 max-w-[300px]">
-          <h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+          <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
             Featured
           </h2>
           <p>Hire top influencers across all platforms</p>
@@ -102,7 +102,7 @@
     <div class="flex justify-between items-center">
       <!-- Section Title -->
       <div class="mb-4 max-w-[300px]">
-        <h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
           Instagram
         </h2>
         <p>Hire Instagram influencers</p>
@@ -158,7 +158,7 @@
   <div class="flex justify-between items-center">
     <!-- Section Title -->
     <div class="mb-4 max-w-[300px]">
-      <h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+      <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
         TikTok
       </h2>
       <p>Hire TikTok influencers</p>
@@ -207,13 +207,123 @@
 </section>
 <!-- TikTok -->
 
+<!-- User Generate Content -->
+<section class="py-10">
+  <div class="container">
+    <div class="flex justify-between items-center">
+      <!-- Section Title -->
+      <div class="mb-4 max-w-[300px]">
+        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+          User Generated Content
+        </h2>
+        <p>Hire User Generated Content influencers</p>
+      </div>
+      <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+      @foreach ($featured_services as $index => $featured_service)
+        @if ($featured_service->platform->name == 'User Generated Content')
+          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
+            <div class="rounded-xl overflow-hidden relative">
+              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+              <img src="{{ asset($featured_service->thumbnail_image) }}"
+                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+                alt="">
+              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
+                <p class="text-sm text-white font-agrandir me-1">
+                  @if ($featured_service->influencer)
+                    {{ $featured_service->influencer->name }}
+                  @endif
+                </p>
+                <div class="flex items-center gap-2">
+                  @php
+                    if ($featured_service->total_review > 0) {
+                        $average = $featured_service->average_rating;
+                    }
+                  @endphp
+                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
+                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
+              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
+            </div>
+            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
+          </a>
+          @if ($loop->iteration >= 4)
+          @break
+        @endif
+      @endif
+    @endforeach
+  </div>
+  </div>
+</section>
+<!-- User Generate Content -->
+
+<!-- Youtube -->
+<section class="py-10">
+  <div class="container">
+    <div class="flex justify-between items-center">
+      <!-- Section Title -->
+      <div class="mb-4 max-w-[300px]">
+        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+          Youtube
+        </h2>
+        <p>Hire Youtube influencers</p>
+      </div>
+      <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+      @foreach ($featured_services as $index => $featured_service)
+        @if ($featured_service->platform->name == 'Youtube')
+          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
+            <div class="rounded-xl overflow-hidden relative">
+              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+              <img src="{{ asset($featured_service->thumbnail_image) }}"
+                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+                alt="">
+              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
+                <p class="text-sm text-white font-agrandir me-1">
+                  @if ($featured_service->influencer)
+                    {{ $featured_service->influencer->name }}
+                  @endif
+                </p>
+                <div class="flex items-center gap-2">
+                  @php
+                    if ($featured_service->total_review > 0) {
+                        $average = $featured_service->average_rating;
+                    }
+                  @endphp
+                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
+                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
+              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
+            </div>
+            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
+          </a>
+          @if ($loop->iteration >= 4)
+          @break
+        @endif
+      @endif
+    @endforeach
+  </div>
+  </div>
+</section>
+<!-- Youtube -->
+
 <!-- Any -->
 <section class="py-10">
 <div class="container">
 <div class="flex justify-between items-center">
   <!-- Section Title -->
   <div class="mb-4 max-w-[300px]">
-    <h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+    <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
       Any
     </h2>
     <p>Hire Any influencers</p>
@@ -418,53 +528,128 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </section>
 <!-- End Faq Area -->
 
-<!-- Blog Area -->
-<section id="blog" class="blog-area inflanar-bg-cover section-padding">
-<div class="blog-bg-pattern">
-<div class="container">
-<div class="row">
-  <div class="col-12">
-    <!-- Section TItle -->
-    <div class="inflanar-section__head inflanar-section__center text-center mg-btm-20">
-      <span class="inflanar-section__badge  inflanar-primary-color m-0" data-aos="fade-in"
-        data-aos-delay="300">
-        <span>{{ $home_page->blog_title }}</span> <img
-          src="{{ asset('frontend/img/in-section-vector2.svg') }}">
-      </span>
-      <h2 class="inflanar-section__title" data-aos="fade-in" data-aos-delay="400">
-        {{ $home_page->blog_header }}</h2>
+<!-- Trusted By 110, 000+ Brands -->
+<section class="pt-20 pb-10">
+  <div class="container">
+  <div class="flex justify-between items-center">
+    <!-- Section Title -->
+    <div class="mb-4">
+      <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+        Trusted By 110, 000+ Brands
+      </h2>
+      <p>View collaborations from brands like Wealthsimple, Hopper, Deezer, and more.</p>
+    </div>
+    <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+  </div>
+  <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4">
+    <div class="relative video-element" class="trust-video">
+      <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover new-video">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+      </video>
+      <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
+      <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
+    </div>
+    <div class="relative video-element" class="trust-video">
+      <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover new-video">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+      </video>
+      <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
+      <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
+    </div>
+    <div class="relative video-element" class="trust-video">
+      <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover new-video">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+      </video>
+      <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
+      <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
+    </div>
+    <div class="relative video-element" class="trust-video">
+      <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover new-video">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+      </video>
+      <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
+      <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
+    </div>
+    <div class="relative video-element" class="trust-video">
+      <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover video new-video">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+      </video>
+      <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
+      <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
     </div>
   </div>
-</div>
-<div class="row">
+  </div>
+</section>
+<!-- Trusted By 110, 000+ Brands -->
 
+<!-- Case Studies -->
+<section id="blog" class="blog-area inflanar-bg-cover pt-10 pb-20">
+<div class="blog-bg-pattern">
+<div class="container">
+
+<div class="flex justify-between items-center mb-4">
+  <!-- Section Title -->
+  <div class="max-w-[300px]">
+    <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+      Case Studies
+    </h2>
+  </div>
+</div>
+
+
+<div class="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-4">
   @foreach ($blogs as $index => $blog)
-    <div class="col-xl-3 col-lg-4 col-md-6 col-12">
-      <!-- Single Blog -->
-      <div class="inflanar-blog">
-        <div class="inflanar-blog__head">
-          <a href="{{ route('blog', $blog->slug) }}"><img src="{{ asset($blog->image) }}" alt="#"></a>
+      <a href="{{ route('blog', $blog->slug) }}" class="group">
+        <div class="rounded-xl overflow-hidden relative">
+          <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+          <img src="{{ asset($blog->image) }}"
+            class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+            alt="">
+          <div class="absolute md:left-[30px] left-[10px] md:bottom-[30px] bottom-[10px] md:right-[30px] right-[10px] flex items-center gap-1 z-[3]">
+            <p class="text-[20px] text-white font-agrandir">
+              {{ $blog->title }}
+            </p>
+          </div>
         </div>
-        <!-- Blog Content -->
-        <div class="inflanar-blog__content">
-          <ul class="inflanar-blog__meta list-none">
-            <li><img src="{{ asset('frontend/img/in-author-icon.svg') }}">{{ __('admin.By') }}
-              <span>{{ $blog->author ? $blog->author->name : '' }}</span>
-            </li>
-            <li><img src="{{ asset('frontend/img/in-calendar-icon.svg') }}">
-              {{ $blog->created_at->format('d M Y') }}</li>
-          </ul>
-          <h3 class="inflanar-blog__title"><a href="{{ route('blog', $blog->slug) }}">{{ $blog->title }}</a>
-          </h3>
-        </div>
-      </div>
-      <!-- End Single Blog -->
-    </div>
-  @endforeach
-
+      </a>
+@endforeach
 </div>
+
 </div>
 </div>
 </section>
-<!-- End Blog Area -->
+<!-- Case Studies -->
+
 @endsection
+
+@push('scripts')
+  <script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+      const videos = document.querySelectorAll(".new-video");
+      videos.forEach((video) => {
+        const videoElement = video.closest(".video-element");
+        console.log(videoElement)
+        const playBtn = videoElement.querySelector(".play-btn");
+        const pauseBtn = videoElement.querySelector(".pause-btn");
+        console.log({playBtn, pauseBtn, videoElement})
+        playBtn.addEventListener("click", () => {
+          video.play();
+          playBtn.classList.add("hidden");
+          pauseBtn.classList.remove("hidden");
+        });
+        pauseBtn.addEventListener("click", () => {
+          video.pause();
+          playBtn.classList.remove("hidden");
+          pauseBtn.classList.add("hidden");
+        });
+        video.addEventListener("ended", () => {
+          playBtn.classList.remove("hidden");
+          pauseBtn.classList.add("hidden");
+          video.currentTime = 0;
+        });
+      })
+  });
+  </script>
+
+@endpush
