@@ -373,7 +373,7 @@
 
 
 <!-- Footer CTA -->
-<section class="footer-cta inflanar-bg-cover section-padding">
+<section class="inflanar-bg-cover pb-20">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -394,69 +394,50 @@
 <!-- End Footer CTA -->
 
 <!-- Footer -->
-<footer class="footer-area p-relative">
+<footer class="footer-area pt-20">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-top-inner pd-top-30 pd-btm-100">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-              <!-- Footer Widget -->
-              <div class="footer-about-widget">
-                <div class="footer-logo inflanar-header__logo">
-                  <a class="logo" href="{{ route('home') }}"><img src="{{ asset($setting->footer_logo) }}"
-                      alt="#"></a>
-                </div>
-                <h4 class="footer-about-widget__title">{{ $setting->about_us }}</h4>
-                <div class="footer-get-touch">
-                  <p>{{ __('admin.Get in Touch..') }} <a
-                      href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></p>
-                </div>
-              </div>
-              <!-- End Footer Widget -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-              <!-- Footer Widget -->
-              <div class="single-widget footer-useful-links">
-                <h3 class="widget-title">{{ __('admin.Quick Links') }}</h3>
-                <ul class="footer__list list-none">
-                  <li><a href="{{ route('about-us') }}">{{ __('admin.About Us') }}</a></li>
-                  <li><a href="{{ route('services') }}">{{ __('admin.Our Services') }}</a></li>
-                  <li><a href="{{ route('influencers') }}">{{ __('admin.Our Influencers') }}</a></li>
-                  <li><a href="{{ route('blogs') }}">{{ __('admin.Our Blogs') }}</a></li>
-                  <li><a href="{{ route('contact-us') }}">{{ __('admin.Contact Us') }}</a></li>
-                  <li><a href="{{ route('terms-conditions') }}">{{ __('admin.Terms And Conditions') }}</a></li>
-                  <li><a href="{{ route('privacy-policy') }}">{{ __('admin.Privacy Policy') }}</a></li>
-                  <li><a href="{{ route('faq') }}">{{ __('admin.FAQ') }}</a></li>
-                  <li><a href="{{ route('user.dashboard') }}">{{ __('admin.My Profile') }}</a></li>
-                  <li><a href="{{ route('user.change-password') }}">{{ __('admin.Change Password') }}</a></li>
-                </ul>
-              </div>
-              <!-- End Footer Widget -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-              <!-- Footer Widget -->
-              <div class="single-widget footer-contact">
-                <h3 class="widget-title">{{ __('admin.Working Hour') }}</h3>
-                <div class="f-contact__form-top">
-                  <ul class="f-contact-list list-none">
-                    <li>{{ $setting->open_day }}</li>
-                    <li>{{ $setting->closed_day }}</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- End Footer Widget -->
-              <!-- Footer Widget -->
-              <div class="single-widget footer-contact mg-top-30">
-                <h3 class="widget-title">{{ __('admin.Our Location') }}</h3>
-                <div class="f-contact__form-top">
-                  <p>{{ $setting->address }}</p>
-                </div>
-              </div>
-              <!-- End Footer Widget -->
-            </div>
-          </div>
-        </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pb-16">
+      <div class="single-widget footer-useful-links">
+        <h3 class="font-semibold text-white mb-2 text-xl">Resources</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Blog</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Resource Hub</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Affiliate Program</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Ebook For Brands</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">2025 Influencer Marketing Report</a></li>
+        </ul>
+      </div>
+      <div class="single-widget footer-useful-links">
+        <h3 class="font-semibold text-white mb-2 text-xl">Tools</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Price Calculator</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Fake Follower Checker</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Fake Follower Checker</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Engagement Rate Calculator</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Engagement Rate Calculator</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Campaign Brief Template</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Contract Template</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Analytics & Tracking</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Reels Downloader</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Video Downloader</a></li>
+        </ul>
+      </div>
+      <div class="single-widget footer-useful-links">
+        <h3 class="font-semibold text-white mb-2 text-xl">Discover</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Find Influencers</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Top Influencers</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Search Influencers</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Buy Shoutouts</a></li>
+        </ul>
+      </div>
+      <div class="single-widget footer-useful-links">
+        <h3 class="font-semibold text-white mb-2 text-xl">Support</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Contact Us</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">How It Works</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Frequently Asked Questions</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -467,7 +448,7 @@
         <div class="col-12">
           <div class="copyright__inner">
             <!-- Copyright Text -->
-            <p class="copyright-text">{{ $setting->copyright }}</p>
+            <p class="copyright-text !text-[12px] font-normal font-agrandir !text-[rgba(255,255,255,0.41)]">{{ $setting->copyright }}</p>
             <!-- Social -->
             <ul class="inflanar-social inflanar-social__v2">
               @if ($setting->twitter)
