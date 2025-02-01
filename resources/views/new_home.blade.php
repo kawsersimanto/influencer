@@ -49,51 +49,48 @@
   <!-- Top Influencers -->
   <section class="py-20">
     <div class="container">
-			<div class="flex justify-between items-center">
-				<!-- Section TItle -->
-				<div class="mb-4 max-w-[300px]">
-					<h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
-						Featured
-					</h2>
-					<p>Hire top influencers across all platforms</p>
-				</div>
-				<a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
-			</div>
+      <div class="flex justify-between items-center">
+        <!-- Section Title -->
+        <div class="mb-4 max-w-[300px]">
+          <h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+            Featured
+          </h2>
+          <p>Hire top influencers across all platforms</p>
+        </div>
+        <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+      </div>
       <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
         @foreach ($featured_services as $index => $featured_service)
-          <div>
-            <a href="#" class="group">
-              <div class="rounded-xl overflow-hidden relative">
-                <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
-                <img src={{ asset($featured_service->thumbnail_image) }}
-                  class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
-                  alt="">
-                <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
-                  <p class="text-sm text-white font-agrandir me-1">
-                    @if ($featured_service->influencer)
-                      {{ $featured_service->influencer->name }}
-                    @endif
-                  </p>
-                  <div class="flex items-center gap-2">
-                    @php
-                      if ($featured_service->total_review > 0) {
-                          $average = $featured_service->average_rating;
-                      }
-                    @endphp
-										<i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
-										<span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
-                  </div>
+          <a href="#" class="group">
+            <div class="rounded-xl overflow-hidden relative">
+              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+              <img src="{{ asset($featured_service->thumbnail_image) }}"
+                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+                alt="">
+              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
+                <p class="text-sm text-white font-agrandir me-1">
+                  @if ($featured_service->influencer)
+                    {{ $featured_service->influencer->name }}
+                  @endif
+                </p>
+                <div class="flex items-center gap-2">
+                  @php
+                    if ($featured_service->total_review > 0) {
+                        $average = $featured_service->average_rating;
+                    }
+                  @endphp
+                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
+                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
                 </div>
               </div>
-              <div class="flex items-center justify-between pt-2">
-                <p class="text-[12px]">{{ $featured_service->category->name }}</p>
-                <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
-              </div>
-              <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
-            </a>
-          </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
+              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
+            </div>
+            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
+          </a>
         @endforeach
-
       </div>
     </div>
   </section>
@@ -116,7 +113,7 @@
         </div>
       </div>
       <div class="row">
-        
+
       </div>
       <div class="row mg-top-40" data-aos="fade-up" data-aos-delay="600">
         <div class="col-12 d-flex justify-content-center">

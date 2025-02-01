@@ -53,7 +53,7 @@ class HomeController extends Controller
     $working_proccess = WorkingProccess::first();
     $partners = Partner::all();
     $blogs = Blog::with('author')->where('show_homepage', 'yes')->orderBy('id', 'desc')->get();
-    $featured_services = Service::with('category', 'influencer')->where(['status' => 'active', 'approve_by_admin' => 'enable', 'is_banned' => 'disable'])->orderBy('id', 'desc')->get()->take(4);
+    $featured_services = Service::with('category', 'influencer', 'platform')->where(['status' => 'active', 'approve_by_admin' => 'enable', 'is_banned' => 'disable'])->orderBy('id', 'desc')->get()->take(4);
     $categories = Category::where('status', 'active')->get();
     $why_choose_us = WhyChooseUs::first();
     $testimonials = Testimonial::orderBy('id', 'desc')->get();
