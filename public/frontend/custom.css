@@ -204,3 +204,9 @@ a:hover,
     border-radius: 12px;
     overflow: hidden;
 }
+
+/* faq  */
+
+.collapse {
+    visibility: unset !important;
+}

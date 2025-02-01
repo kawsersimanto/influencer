@@ -207,116 +207,6 @@
 </section>
 <!-- TikTok -->
 
-<!-- User Generate Content -->
-<section class="py-10">
-  <div class="container">
-    <div class="flex justify-between items-center">
-      <!-- Section Title -->
-      <div class="mb-4 max-w-[300px]">
-        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
-          User Generated Content
-        </h2>
-        <p>Hire User Generated Content influencers</p>
-      </div>
-      <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
-    </div>
-    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
-      @foreach ($featured_services as $index => $featured_service)
-        @if ($featured_service->platform->name == 'User Generated Content')
-          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
-            <div class="rounded-xl overflow-hidden relative">
-              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
-              <img src="{{ asset($featured_service->thumbnail_image) }}"
-                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
-                alt="">
-              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
-                <p class="text-sm text-white font-agrandir me-1">
-                  @if ($featured_service->influencer)
-                    {{ $featured_service->influencer->name }}
-                  @endif
-                </p>
-                <div class="flex items-center gap-2">
-                  @php
-                    if ($featured_service->total_review > 0) {
-                        $average = $featured_service->average_rating;
-                    }
-                  @endphp
-                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
-                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center justify-between pt-2">
-              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
-              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
-            </div>
-            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
-          </a>
-          @if ($loop->iteration >= 4)
-          @break
-        @endif
-      @endif
-    @endforeach
-  </div>
-  </div>
-</section>
-<!-- User Generate Content -->
-
-<!-- Youtube -->
-<section class="py-10">
-  <div class="container">
-    <div class="flex justify-between items-center">
-      <!-- Section Title -->
-      <div class="mb-4 max-w-[300px]">
-        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
-          Youtube
-        </h2>
-        <p>Hire Youtube influencers</p>
-      </div>
-      <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
-    </div>
-    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
-      @foreach ($featured_services as $index => $featured_service)
-        @if ($featured_service->platform->name == 'Youtube')
-          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
-            <div class="rounded-xl overflow-hidden relative">
-              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
-              <img src="{{ asset($featured_service->thumbnail_image) }}"
-                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
-                alt="">
-              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
-                <p class="text-sm text-white font-agrandir me-1">
-                  @if ($featured_service->influencer)
-                    {{ $featured_service->influencer->name }}
-                  @endif
-                </p>
-                <div class="flex items-center gap-2">
-                  @php
-                    if ($featured_service->total_review > 0) {
-                        $average = $featured_service->average_rating;
-                    }
-                  @endphp
-                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
-                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center justify-between pt-2">
-              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
-              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
-            </div>
-            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
-          </a>
-          @if ($loop->iteration >= 4)
-          @break
-        @endif
-      @endif
-    @endforeach
-  </div>
-  </div>
-</section>
-<!-- Youtube -->
-
 <!-- Any -->
 <section class="py-10">
 <div class="container">
@@ -483,51 +373,6 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </section>
 <!-- End Viideo CTA -->
 
-<!-- Faq Area -->
-<section class="inflanar-bg-cover pd-top-90 pd-btm-120 inflanar-section-shape2  inflanar-ohidden">
-<div class="container inflanar-container-medium">
-<div class="row inflanar-container-medium__row align-items-center">
-<div class="col-lg-5 col-12 mg-top-30">
-  <!-- Section TItle -->
-  <div class="inflanar-section__head mg-btm-50">
-    <span class="inflanar-section__badge inflanar-primary-color m-0" data-aos="fade-in" data-aos-delay="300">
-      <span>{{ $home_page->faq_title }}</span> <img src="{{ asset('frontend/img/in-section-vector2.svg') }}">
-    </span>
-    <h2 class="inflanar-section__title mg-btm-20" data-aos="fade-in" data-aos-delay="400">
-      {{ $home_page->faq_header }}</h2>
-    <p>{{ $home_page->faq_description }}</p>
-  </div>
-  <!-- Support Img -->
-  <div class="inflanar-support-img" data-aos="fade-up" data-aos-delay="200">
-    <img src="{{ asset($home_page->faq_image) }}" alt="#">
-  </div>
-  <!-- End Support Img -->
-</div>
-<div class="col-lg-7 col-12 mg-top-30">
-  <div class="inflanar-accordion accordion accordion-flush" id="inflanar-accordion">
-    @foreach ($faqs as $index => $faq)
-      <!-- End Single Accordion -->
-      <div class="accordion-item inflanar-accordion__single {{ $index == 0 ? 'active' : '' }} mg-top-20">
-        <h2 class="accordion-header" id="inflanart-{{ $index }}">
-          <button class="accordion-button collapsed inflanar-accordion__heading" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#ac-collapse{{ $index }}">{{ $faq->question }}</button>
-        </h2>
-        <div id="ac-collapse{{ $index }}"
-          class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}"
-          data-bs-parent="#inflanar-accordion">
-          <div class="accordion-body inflanar-accordion__body">{!! clean($faq->answer) !!}</div>
-        </div>
-      </div>
-      <!-- End Single Accordion -->
-    @endforeach
-  </div>
-</div>
-</div>
-</div>
-</section>
-<!-- End Faq Area -->
-
 <!-- Trusted By 110, 000+ Brands -->
 <section class="pt-20 pb-10">
   <div class="container">
@@ -551,14 +396,14 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
     </div>
     <div class="relative video-element" class="trust-video">
       <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover new-video">
-        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/3.mp4#t=0.1">
       </video>
       <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
       <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
     </div>
     <div class="relative video-element" class="trust-video">
       <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover new-video">
-        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/5.mp4#t=0.1">
       </video>
       <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
       <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
@@ -572,7 +417,7 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
     </div>
     <div class="relative video-element" class="trust-video">
       <video class="h-[330px] rounded-lg overflow-hidden w-full object-cover video new-video">
-        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/1.mp4#t=0.1">
+        <source src="https://d5ik1gor6xydq.cloudfront.net/websiteImages/content/5.mp4#t=0.1">
       </video>
       <i class="fa-solid fa-play play-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] cursor-pointer"></i>
       <i class="fa-solid fa-pause pause-btn text-white absolute left-[20px] right-[20px] bottom-[20px] z-[1] hidden cursor-pointer"></i>
@@ -583,7 +428,7 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 <!-- Trusted By 110, 000+ Brands -->
 
 <!-- Case Studies -->
-<section id="blog" class="blog-area inflanar-bg-cover pt-10 pb-20">
+<section id="blog" class="blog-area inflanar-bg-cover py-10">
 <div class="blog-bg-pattern">
 <div class="container">
 
@@ -619,6 +464,145 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </div>
 </section>
 <!-- Case Studies -->
+
+<!-- Youtube -->
+<section class="py-10">
+  <div class="container">
+    <div class="flex justify-between items-center">
+      <!-- Section Title -->
+      <div class="mb-4 max-w-[300px]">
+        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+          Youtube
+        </h2>
+        <p>Hire Youtube influencers</p>
+      </div>
+      <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+      @foreach ($featured_services as $index => $featured_service)
+        @if ($featured_service->platform->name == 'Youtube')
+          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
+            <div class="rounded-xl overflow-hidden relative">
+              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+              <img src="{{ asset($featured_service->thumbnail_image) }}"
+                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+                alt="">
+              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
+                <p class="text-sm text-white font-agrandir me-1">
+                  @if ($featured_service->influencer)
+                    {{ $featured_service->influencer->name }}
+                  @endif
+                </p>
+                <div class="flex items-center gap-2">
+                  @php
+                    if ($featured_service->total_review > 0) {
+                        $average = $featured_service->average_rating;
+                    }
+                  @endphp
+                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
+                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
+              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
+            </div>
+            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
+          </a>
+          @if ($loop->iteration >= 4)
+          @break
+        @endif
+      @endif
+    @endforeach
+  </div>
+  </div>
+</section>
+<!-- Youtube -->
+
+<!-- User Generate Content -->
+<section class="pt-10 pb-20">
+  <div class="container">
+    <div class="flex justify-between items-center">
+      <!-- Section Title -->
+      <div class="mb-4 max-w-[300px]">
+        <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
+          User Generated Content
+        </h2>
+        <p>Hire User Generated Content influencers</p>
+      </div>
+      <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+      @foreach ($featured_services as $index => $featured_service)
+        @if ($featured_service->platform->name == 'User Generated Content')
+          <a href="/influencers/{{ $featured_service->influencer->username }}" class="group">
+            <div class="rounded-xl overflow-hidden relative">
+              <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
+              <img src="{{ asset($featured_service->thumbnail_image) }}"
+                class="sm:h-[280px] h-[180px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.1]"
+                alt="">
+              <div class="absolute left-[10px] bottom-[10px] flex items-center gap-1 z-[3]">
+                <p class="text-sm text-white font-agrandir me-1">
+                  @if ($featured_service->influencer)
+                    {{ $featured_service->influencer->name }}
+                  @endif
+                </p>
+                <div class="flex items-center gap-2">
+                  @php
+                    if ($featured_service->total_review > 0) {
+                        $average = $featured_service->average_rating;
+                    }
+                  @endphp
+                  <i class="fa-solid fa-star text-yellow-400 text-[12px]"></i>
+                  <span class="text-white text-sm font-agrandir font-normal">{{ number_format($average, 1) }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <p class="text-[12px]">{{ $featured_service->category->name }}</p>
+              <p class="text-black text-sm font-medium">{{ currency($featured_service->price) }}</p>
+            </div>
+            <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $featured_service->title }}</h3>
+          </a>
+          @if ($loop->iteration >= 4)
+          @break
+        @endif
+      @endif
+    @endforeach
+  </div>
+  </div>
+</section>
+<!-- User Generate Content -->
+
+<!-- Faq Area -->
+<section class="pt-10 pb-28">
+  <div class="container">
+    <div class="">
+      <div class="">
+        <div class="inflanar-accordion accordion accordion-flush" id="inflanar-accordion">
+          @foreach ($faqs as $index => $faq)
+            <!-- End Single Accordion -->
+            <div class="accordion-item inflanar-accordion__single {{ $index == 0 ? 'active' : '' }} mg-top-20">
+              <h2 class="accordion-header" id="inflanart-{{ $index }}">
+                <button class="accordion-button collapsed inflanar-accordion__heading" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#ac-collapse{{ $index }}">{{ $faq->question }}</button>
+              </h2>
+              <div id="ac-collapse{{ $index }}"
+                class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}"
+                data-bs-parent="#inflanar-accordion">
+                <div class="accordion-body inflanar-accordion__body">{!! clean($faq->answer) !!}</div>
+              </div>
+            </div>
+            <!-- End Single Accordion -->
+          @endforeach
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- End Faq Area -->
 
 @endsection
 
