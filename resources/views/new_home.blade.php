@@ -52,7 +52,7 @@
 			<div class="flex justify-between items-center">
 				<!-- Section TItle -->
 				<div class="mb-4 max-w-[300px]">
-					<h2 class="text-2xl font-medium" data-aos="fade-in" data-aos-delay="300">
+					<h2 class="text-xl font-medium font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
 						Featured
 					</h2>
 					<p>Hire top influencers across all platforms</p>
