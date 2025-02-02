@@ -305,7 +305,7 @@
 <!-- Any -->
 
 <!-- Partners -->
-<section class="pb-28">
+<section id="how-it-works" class="pb-28">
   <div class="container">
     <div class="brands">
       <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2">
