@@ -288,7 +288,7 @@
                   <div class="nav-item">
                     <!-- Main Menu -->
                     <ul class="nav-menu menu navigation list-none font-agrandir">
-                      <li><a href="{{ route('services') }}">Search</a>
+                      <li><a href="{{ route('search.index') }}">Search</a>
                       </li>
                       <li><a href="#how-it-works">How it Works</a>
                       </li>

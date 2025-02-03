@@ -53,7 +53,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaypalController;
 
 use App\Http\Controllers\Influencer\PortfolioController;
-
+use App\Http\Controllers\SearchController;
 // end user panel
 
 use App\Models\MultiCurrency;
@@ -118,6 +118,7 @@ Route::group(['middleware' => ['XSS','DEMO']], function () {
 
             Route::get('/services', 'services')->name('services');
             Route::get('/service/{slug}', 'service_show')->name('service');
+            Route::get('/search', [SearchController::class, 'index'])->name('search.index');
 
             Route::get('/blogs', 'blogs')->name('blogs');
             Route::get('/blog/{slug}', 'blog_show')->name('blog');
