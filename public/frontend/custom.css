@@ -214,3 +214,13 @@ a:hover,
 body {
     font-family: agrandir-regular;
 }
+
+.profile-tab-btn.active {
+    background-color: var(--theme-primary);
+    color: #000;
+}
+
+.influencers-sidebar__tag li a:hover {
+    color: #000 !important;
+    background-color: var(--theme-primary);
+}
