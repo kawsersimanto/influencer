@@ -377,13 +377,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="footer-cta__inner inflanar-bg-cover  inflanar-section-shape3">
+        <div class="footer-cta__inner inflanar-bg-cover inflanar-section-shape3 py-5">
           <div class="footer-cta__content">
-            <h3 class="footer-cta__title">{{ $home_page->provider_joining_title }}</h3>
+            <h3 class="footer-cta__title lg:text-4xl text-2xl !md:mb-10 !mb-5">{{ $home_page->provider_joining_title }}</h3>
             <a href="{{ route('register') }}"
               class="inflanar-btn inflanar-btn__big"><span>{{ __('admin.Join as Influencer') }}</span></a>
           </div>
-          <div class="footer-cta__img">
+          <div class="footer-cta__img md:min-w-[50%] md:max-w-[50%] min-w-full max-w-full">
             <img src="{{ asset($home_page->provider_joining_image) }}">
           </div>
         </div>
