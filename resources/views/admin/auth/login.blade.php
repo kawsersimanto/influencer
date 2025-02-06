@@ -154,8 +154,9 @@
                     data:$('#adminLoginForm').serialize(),
                     success:function(response){
                         if(response.success){
-                            window.location.href = "{{ route('admin.dashboard')}}";
-                            toastr.success(response.success)
+                            window.location.replace("{{ route('admin.dashboard')}}");
+                            toastr.success(response.success);
+                            window.location.reload();
                         }
                         if(response.error){
                             toastr.error(response.error)

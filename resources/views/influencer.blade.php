@@ -223,102 +223,9 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="service-tab-pane" role="tabpanel" aria-labelledby="service-tab"
               tabindex="0">
-              <div class="grid lg:grid-cols-3 grid-cols-2 sm:gap-5 gap-3 mt-5">
+              <div class="grid lg:grid-cols-3 grid-cols-2 gap-1 lg:gap-8 mt-5">
                 @forelse ($services as $index => $service)
-                  {{-- <div class="col-xl-4 col-lg-6 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="400">
-                    <!-- Single property-->
-                    <div class="inflanar-service">
-                      <!-- Property Head-->
-                      <div class="inflanar-service__head">
-                        <img src="{{ asset($service->thumbnail_image) }}" alt="#">
-                        @auth('web')
-                          <div
-                            class="inflanar-service__wishlist {{ $service->is_wishlist($service->id) == true ? 'active' : '' }} add_to_wishlist"
-                            data-service_id="{{ $service->id }}">
-                            <a href="javascript:;"><i class="fas fa-heart"></i></a>
-                          </div>
-                        @else
-                          <div class="inflanar-service__wishlist add_to_wishlist" data-service_id="{{ $service->id }}">
-                            <a href="javascript:;"><i class="fas fa-heart"></i></a>
-                          </div>
-                        @endauth
-                      </div>
-                      <!-- Property Body-->
-                      <div class="inflanar-service__body">
-                        <div class="inflanar-service__top">
-                          @if ($service->category)
-                            <a href="{{ route('services', ['categories[]' => $service->category->slug]) }}"
-                              class="inflanar-service__cat"><img
-                                src="{{ asset('frontend/img/in-cat-label.svg') }}">{{ $service->category->name }}</a>
-                          @endif
-
-                          <div class="inflanar-service__price">
-                            {{ currency($service->price) }}
-                          </div>
-                        </div>
-                        <h3 class="inflanar-service__title"><a
-                            href="{{ route('service', $service->slug) }}">{{ $service->title }}</a></h3>
-                        <div class="inflanar-service__author">
-                          <div class="inflanar-service__author--info">
-                            @if ($service->influencer)
-                              <a href="{{ route('influencer', $service->influencer->username) }}"><img
-                                  src="{{ $service->influencer->image ? asset($service->influencer->image) : asset($setting->default_avatar) }}">{{ $service->influencer->name }}</a>
-                            @endif
-
-                          </div>
-
-                          <div class="inflanar-service__author--rating">
-                            @php
-                              if ($service->total_review > 0) {
-                                  $average = $service->average_rating;
-
-                                  $int_average = intval($average);
-
-                                  $next_value = $int_average + 1;
-                                  $review_point = $int_average;
-                                  $half_review = false;
-                                  if ($int_average < $average && $average < $next_value) {
-                                      $review_point = $int_average + 0.5;
-                                      $half_review = true;
-                                  }
-                              }
-                            @endphp
-                            <div class="inflanar-service__author--star">
-                              @if ($service->total_review > 0)
-                                @for ($i = 1; $i <= 5; $i++)
-                                  @if ($i <= $review_point)
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                  @elseif ($i > $review_point)
-                                    @if ($half_review == true)
-                                      <span><i class="fa-solid fa-star-half-stroke"></i></span>
-                                      @php
-                                        $half_review = false;
-                                      @endphp
-                                    @else
-                                      <span><i class="fa-regular fa-star"></i></span>
-                                    @endif
-                                  @endif
-                                @endfor
-                              @else
-                                <span><i class="fa-regular fa-star"></i></span>
-                                <span><i class="fa-regular fa-star"></i></span>
-                                <span><i class="fa-regular fa-star"></i></span>
-                                <span><i class="fa-regular fa-star"></i></span>
-                                <span><i class="fa-regular fa-star"></i></span>
-                              @endif
-
-                            </div>
-                            <div class="inflanar-service__author--label">({{ $service->total_review }})</div>
-                          </div>
-
-                        </div>
-                        <a class="inflanar-btn-full inflanar-btn-full--v2 mg-top-20"
-                          href="{{ route('booking-service', $service->slug) }}">{{ __('admin.Book Now') }}</a>
-                      </div>
-                    </div>
-                    <!-- End Single property-->
-                  </div> --}}
-                  <a href="/influencers/{{ $service->influencer->username }}" class="group">
+                  <div href="/influencers/{{ $service->influencer->username }}" class="group">
                     <div class="rounded-xl overflow-hidden relative">
                       <div class="absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[2]"></div>
                       <img src="{{ asset($service->thumbnail_image) }}"
@@ -348,7 +255,7 @@
                       <p class="text-black text-sm font-medium">{{ currency($service->price) }}</p>
                     </div>
                     <h3 class="font-agrandir line-clamp-1 mt-2 duration-300">{{ $service->title }}</h3>
-                  </a>
+                  </div>
                 @empty
                   <div class="col-12 mg-top-30 text-center text-danger">
                     <h3>{{ __('admin.Sorry!! Service not found.') }}</h3>
