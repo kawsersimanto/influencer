@@ -223,7 +223,7 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="service-tab-pane" role="tabpanel" aria-labelledby="service-tab"
               tabindex="0">
-              <div class="grid grid-cols-3 gap-5 mt-5">
+              <div class="grid lg:grid-cols-3 grid-cols-2 sm:gap-5 gap-3 mt-5">
                 @forelse ($services as $index => $service)
                   {{-- <div class="col-xl-4 col-lg-6 col-md-6 col-12 mg-top-30" data-aos="fade-in" data-aos-delay="400">
                     <!-- Single property-->
