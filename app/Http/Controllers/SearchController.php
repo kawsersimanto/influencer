@@ -25,6 +25,10 @@ class SearchController extends Controller
           ]);
     }
 
+    public function filter(Request $request) {
+        dd($request->all());
+    }
+
     /**
      * Show the form for creating a new resource.
      */

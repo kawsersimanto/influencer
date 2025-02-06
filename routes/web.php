@@ -119,6 +119,7 @@ Route::group(['middleware' => ['XSS','DEMO']], function () {
             Route::get('/services', 'services')->name('services');
             Route::get('/service/{slug}', 'service_show')->name('service');
             Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+            Route::get('/search/filter', [SearchController::class, 'filter'])->name('search.filter');
 
             Route::get('/blogs', 'blogs')->name('blogs');
             Route::get('/blog/{slug}', 'blog_show')->name('blog');

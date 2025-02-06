@@ -37,7 +37,7 @@
               <i class="fa-solid fa-magnifying-glass text-xl"></i></button>
           </form> --}}
 
-          <form id="filterForm" action="{{ route('services') }}" method="GET" class="shadow-light-shadow sm:rounded-[50px] rounded-[24px] max-w-[1200px] mx-auto gap-2 flex sm:flex-row flex-col items-center p-2 home-search">
+          <form id="filterForm" action="{{ route('search.filter', ['platform', 'categories']) }}" method="GET" class="shadow-light-shadow sm:rounded-[50px] rounded-[24px] max-w-[1200px] mx-auto gap-2 flex sm:flex-row flex-col items-center p-2 home-search">
             @csrf
             <select name="platform" id="platform">
               <option value="">Select a platform</option>
@@ -106,7 +106,7 @@
 
 @push('scripts')
 
-<script>
+{{-- <script>
 
 document.getElementById('filterForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -120,13 +120,12 @@ document.getElementById('filterForm').addEventListener('submit', function (e) {
 });
 
 function fetchResults(platform, categories) {
-    const apiUrl = `/api/search?platform=${platform}&categories=${categories}`;
+    const apiUrl = `http://127.0.0.1:8000/search/filter?platform=${platform}&categories=${categories}`;
+    console.log(apiUrl);
 
-    fetch(apiUrl, {
-        headers: { 'Accept': 'application/json' }
-    })
+    fetch(apiUrl)
         .then(response => response.json())
-        .then(data => updateGrid(data.services.data))  // .data for paginated results
+        .then(data => updateGrid(data.services.data))
         .catch(error => console.error('Error:', error));
 }
 
@@ -155,6 +154,6 @@ function updateGrid(services) {
 }
 
 
-</script>
+</script> --}}
 
 @endpush
