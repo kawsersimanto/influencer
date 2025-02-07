@@ -747,7 +747,7 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
         console.log(videoElement)
         const playBtn = videoElement.querySelector(".play-btn");
         const pauseBtn = videoElement.querySelector(".pause-btn");
-        console.log({playBtn, pauseBtn, videoElement})
+        
         playBtn.addEventListener("click", () => {
           video.play();
           playBtn.classList.add("hidden");
