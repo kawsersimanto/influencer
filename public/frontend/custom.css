@@ -225,6 +225,15 @@ body {
     background-color: var(--theme-primary);
 }
 
+.forgot-pass {
+    color: var(--theme-primary) !important;
+}
+
+.inflanar-btn[type="submit"] {
+    background-color: var(--theme-primary);
+    color: #000;
+}
+
 @media (max-width: 768px) {
     .footer-cta__inner {
         flex-direction: column;
