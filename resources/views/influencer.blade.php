@@ -223,7 +223,7 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="service-tab-pane" role="tabpanel" aria-labelledby="service-tab"
               tabindex="0">
-              <div class="grid lg:grid-cols-3 grid-cols-2 gap-1 lg:gap-8 mt-5">
+              <div class="grid lg:grid-cols-3 grid-cols-2 !gap-3 lg:!gap-8 mt-5">
                 @forelse ($services as $index => $service)
                   <div href="/influencers/{{ $service->influencer->username }}" class="group">
                     <div class="rounded-xl overflow-hidden relative">
