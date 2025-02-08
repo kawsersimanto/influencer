@@ -1,12 +1,15 @@
 
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
-      <div class="sidebar-brand">
-        <a href="{{ route('influencer.dashboard') }}">{{ $setting->app_name }}</a>
+      <div class="sidebar-brand !flex items-center px-[20px]">
+        <a href="{{ route('influencer.dashboard') }}" class="flex justify-center items-center gap-2">
+          <img class="w-[40px] object-contain" src="{{ asset("frontend/img/brandfam.png") }}" alt="Brandfam">
+          <span>Brandfam</span>
+        </a>
       </div>
-      <div class="sidebar-brand sidebar-brand-sm">
+      {{-- <div class="sidebar-brand sidebar-brand-sm">
         <a href="{{ route('influencer.dashboard') }}">{{ $setting->app_name }}</a>
-      </div>
+      </div> --}}
       <ul class="sidebar-menu">
           <li class="{{ Route::is('influencer.dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('influencer.dashboard') }}"><i class="fas fa-home"></i> <span>{{__('admin.Dashboard')}}</span></a></li>
 

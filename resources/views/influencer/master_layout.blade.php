@@ -1,15 +1,16 @@
 @php
-    $setting = App\Models\Setting::first();
+  $setting = App\Models\Setting::first();
 @endphp
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <link rel="shortcut icon"  href="{{ asset($setting->favicon) }}"  type="image/x-icon">
+  <link rel="shortcut icon" href="{{ asset($setting->favicon) }}" type="image/x-icon">
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   @yield('title')
-  <title>{{__('admin.Login')}}</title>
+  <title>{{ __('admin.Login') }}</title>
 
 
   <link rel="stylesheet" href="{{ asset('backend/css/bootstrap.min.css') }}">
@@ -21,7 +22,7 @@
   @if ($setting->text_direction == 'rtl')
     <link rel="stylesheet" href="{{ asset('backend/css/rtl.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/dev_rtl.css') }}">
-    @endif
+  @endif
   <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
   <link rel="stylesheet" href="{{ asset('backend/css/bootstrap4-toggle.min.css') }}">
   <link rel="stylesheet" href="{{ asset('backend/css/dev.css') }}">
@@ -30,20 +31,21 @@
   <link rel="stylesheet" href="{{ asset('backend/css/bootstrap-tagsinput.css') }}">
   <link rel="stylesheet" href="{{ asset('backend/css/fontawesome-iconpicker.min.css') }}">
   <link rel="stylesheet" href="{{ asset('backend/css/bootstrap-datepicker.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('frontend/influencer.css') }}">
 
   <link rel="stylesheet" href="{{ asset('backend/clockpicker/dist/bootstrap-clockpicker.css') }}">
 
   <script src="{{ asset('frontend/js/jquery-3.7.1.min.js') }}"></script>
   <style>
     .fade.in {
-        opacity: 1 !important;
+      opacity: 1 !important;
     }
 
     .tox .tox-promotion,
-    .tox-statusbar__branding{
-        display: none !important;
+    .tox-statusbar__branding {
+      display: none !important;
     }
-</style>
+  </style>
 
 </head>
 
@@ -54,46 +56,52 @@
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
+                  class="fas fa-bars text-black"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                  class="fas fa-search text-black"></i></a></li>
           </ul>
         </form>
         <ul class="navbar-nav navbar-right">
-            <li class="dropdown dropdown-list-toggle"><a target="_blank" href="{{ route('home') }}" class="nav-link nav-link-lg"><i class="fas fa-home"></i> {{__('admin.Visit Website')}}</i></a>
-            </li>
+          <li class="dropdown dropdown-list-toggle"><a target="_blank" href="{{ route('home') }}"
+              class="nav-link nav-link-lg !text-black"><i class="fas fa-home !text-black"></i> {{ __('admin.Visit Website') }}</i></a>
+          </li>
 
-            @php
-                $setting = App\Models\Setting::first();
-                $default_avatar = (object) array(
-                    'image' => $setting->default_avatar
-                );
-                $default_avatar =  $default_avatar;
-                $header_seller=Auth::guard('web')->user();
-            @endphp
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+          @php
+            $setting = App\Models\Setting::first();
+            $default_avatar = (object) [
+                'image' => $setting->default_avatar,
+            ];
+            // $default_avatar = $default_avatar;
+            $header_seller = Auth::guard('web')->user();
+          @endphp
+          <li class="dropdown"><a href="#" data-toggle="dropdown"
+              class="nav-link dropdown-toggle nav-link-lg nav-link-user flex items-center !text-black">
               @if ($header_seller->image)
-              <img alt="imagehave" src="{{ asset($header_seller->image) }}" class="rounded-circle mr-1">
+                <img alt="imagehave" src="{{ asset($header_seller->image) }}" class="rounded-circle mr-1">
               @else
-              <img alt="imagenone" src="{{ asset($default_avatar->image) }}" class="rounded-circle mr-1">
+                <img alt="imagenone" src="{{ asset($default_avatar->image) }}" class="rounded-circle mr-1">
               @endif
-            <div class="d-sm-none d-lg-inline-block">{{ $header_seller->name }}</div></a>
+              <div class="d-sm-none d-lg-inline-block">{{ $header_seller->name }}</div>
+            </a>
             <div class="dropdown-menu dropdown-menu-right">
 
               <a href="{{ route('influencer.edit-profile') }}" class="dropdown-item has-icon">
-                <i class="far fa-user"></i>{{__('admin.My Profile')}}
+                <i class="far fa-user"></i>{{ __('admin.My Profile') }}
               </a>
               <a href="{{ route('influencer.change-password') }}" class="dropdown-item has-icon">
-                <i class="fas fa-lock"></i>{{__('admin.Change Password')}}
+                <i class="fas fa-lock"></i>{{ __('admin.Change Password') }}
               </a>
 
               <div class="dropdown-divider"></div>
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a onclick="event.preventDefault();
-                this.closest('form').submit();" href="javascritp:;" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i>{{__('admin.Logout')}}
-                  </a>
-            </form>
+                this.closest('form').submit();" href="javascritp:;"
+                  class="dropdown-item has-icon text-danger">
+                  <i class="fas fa-sign-out-alt"></i>{{ __('admin.Logout') }}
+                </a>
+              </form>
 
 
             </div>
@@ -107,11 +115,11 @@
 
       <footer class="main-footer">
         <div class="footer-left">
-            {{ $setting->copyright }}
+          {{ $setting->copyright }}
         </div>
         <div class="footer-right">
-            {{ $setting->app_version }}
-          </div>
+          {{ $setting->app_version }}
+        </div>
       </footer>
 
     </div>
@@ -121,21 +129,21 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">{{__('admin.Item Delete Confirmation')}}</h5>
+          <h5 class="modal-title">{{ __('admin.Item Delete Confirmation') }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>{{__('admin.Are You sure want to delete this item ?')}}</p>
+          <p>{{ __('admin.Are You sure want to delete this item ?') }}</p>
         </div>
         <div class="modal-footer bg-whitesmoke br">
-            <form id="deleteForm" action="" method="POST">
-                @csrf
-                @method("DELETE")
-                <button type="button" class="btn btn-danger"  data-dismiss="modal">{{__('admin.Close')}}</button>
-                <button type="submit" class="btn btn-primary">{{__('admin.Yes, Delete')}}</button>
-            </form>
+          <form id="deleteForm" action="" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="button" class="btn btn-danger" data-dismiss="modal">{{ __('admin.Close') }}</button>
+            <button type="submit" class="btn btn-primary">{{ __('admin.Yes, Delete') }}</button>
+          </form>
 
 
 
@@ -167,80 +175,85 @@
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <script>
-        @if(Session::has('messege'))
-        var type="{{Session::get('alert-type','info')}}"
-        switch(type){
-            case 'info':
-                toastr.info("{{ Session::get('messege') }}");
-                break;
-            case 'success':
-                toastr.success("{{ Session::get('messege') }}");
-                break;
-            case 'warning':
-                toastr.warning("{{ Session::get('messege') }}");
-                break;
-            case 'error':
-                toastr.error("{{ Session::get('messege') }}");
-                break;
-        }
-        @endif
-    </script>
-
-    @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            <script>
-                toastr.error('{{ $error }}');
-            </script>
-        @endforeach
+  <script>
+    @if (Session::has('messege'))
+      var type = "{{ Session::get('alert-type', 'info') }}"
+      switch (type) {
+        case 'info':
+          toastr.info("{{ Session::get('messege') }}");
+          break;
+        case 'success':
+          toastr.success("{{ Session::get('messege') }}");
+          break;
+        case 'warning':
+          toastr.warning("{{ Session::get('messege') }}");
+          break;
+        case 'error':
+          toastr.error("{{ Session::get('messege') }}");
+          break;
+      }
     @endif
+  </script>
 
-<script>
-    let activeSellerId= '';
-    let myId = {{ Auth::guard('web')->user()->id; }};
+  @if ($errors->any())
+    @foreach ($errors->all() as $error)
+      <script>
+        toastr.error('{{ $error }}');
+      </script>
+    @endforeach
+  @endif
+
+  <script>
+    let activeSellerId = '';
+    let myId = {{ Auth::guard('web')->user()->id }};
 
     (function($) {
-    "use strict";
-    $(document).ready(function () {
+      "use strict";
+      $(document).ready(function() {
         tinymce.init({
-            selector: '.summernote',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            mergetags_list: [
-                { value: 'First.Name', title: 'First Name' },
-                { value: 'Email', title: 'Email' },
-            ]
+          selector: '.summernote',
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+          mergetags_list: [{
+              value: 'First.Name',
+              title: 'First Name'
+            },
+            {
+              value: 'Email',
+              title: 'Email'
+            },
+          ]
         });
         $('#dataTable').DataTable();
         $('.select2').select2();
         $('.tags').tagify();
         $('.custom-icon-picker').iconpicker({
-            templates: {
-                popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' +
-                    '<div class="popover-title"></div><div class="popover-content"></div></div>',
-                footer: '<div class="popover-footer"></div>',
-                buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' +
-                    ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
-                search: '<input type="search" class="form-control iconpicker-search" placeholder="Type to filter" />',
-                iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
-                iconpickerItem: '<a role="button" href="javascript:;" class="iconpicker-item"><i></i></a>'
-            }
+          templates: {
+            popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' +
+              '<div class="popover-title"></div><div class="popover-content"></div></div>',
+            footer: '<div class="popover-footer"></div>',
+            buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' +
+              ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
+            search: '<input type="search" class="form-control iconpicker-search" placeholder="Type to filter" />',
+            iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
+            iconpickerItem: '<a role="button" href="javascript:;" class="iconpicker-item"><i></i></a>'
+          }
         })
         $('.datepicker').datepicker({
-            format: 'yyyy-mm-dd',
-            startDate: '-Infinity'
+          format: 'yyyy-mm-dd',
+          startDate: '-Infinity'
         });
         $('.clockpicker').clockpicker();
 
-    });
+      });
 
     })(jQuery);
+  </script>
 
-</script>
-
-@stack('message-box')
+  @stack('message-box')
 
 </body>
+
 </html>

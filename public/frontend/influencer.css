@@ -1,0 +1,84 @@
+/* influencer dashboard  */
+
+:root {
+    --influencer-primary: #f7bfa4;
+    --influencer-primary-dark: #dfaf99;
+}
+
+/* sidebar  */
+
+body.sidebar-mini .sidebar-brand {
+    gap: 0;
+}
+
+body.sidebar-mini .sidebar-brand span {
+    display: none;
+}
+
+.main-sidebar .sidebar-menu li.active a {
+    color: var(--influencer-primary);
+}
+
+.main-sidebar .sidebar-menu li ul.dropdown-menu li.active > a {
+    color: var(--influencer-primary);
+}
+
+.main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
+    color: var(--influencer-primary);
+}
+
+.navbar-bg {
+    background-color: var(--influencer-primary);
+}
+
+body.sidebar-mini .main-sidebar .sidebar-menu > li.active > a {
+    box-shadow: none;
+    background-color: var(--influencer-primary);
+    color: #fff;
+}
+
+/* utils  */
+.btn-primary {
+    background-color: var(--influencer-primary) !important;
+    color: black !important;
+    box-shadow: none !important;
+    border-color: var(--influencer-primary) !important;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.chat-box .chat-form .btn:hover,
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary.disabled:active,
+.btn-primary.disabled:hover,
+.btn:not(.btn-social):not(.btn-social-icon):active,
+.btn:not(.btn-social):not(.btn-social-icon):focus,
+.btn:not(.btn-social):not(.btn-social-icon):hover {
+    background-color: var(--influencer-primary-dark) !important;
+    cursor: pointer;
+}
+
+.chat-right .chat-text {
+    color: black !important;
+    background-color: var(--influencer-primary) !important;
+}
+
+[type="text"]:focus,
+input:where(:not([type])):focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--influencer-primary) !important;
+}
