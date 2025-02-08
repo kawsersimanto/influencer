@@ -16,8 +16,8 @@ export default {
                 main: "#fdd3ae",
             },
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                agrandir: ["agrandir-regular"],
+                sans: ["Neue Kabel Extrabold", ...defaultTheme.fontFamily.sans],
+                agrandir: ["Neue Kabel Extrabold"],
             },
             backgroundImage: {
                 "sunset-gradient":

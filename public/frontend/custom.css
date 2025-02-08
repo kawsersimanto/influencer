@@ -1,3 +1,24 @@
+@font-face {
+    font-family: "Neue Kabel Extrabold";
+    src: url("../fonts/neue_kabel_extrabold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Neue Kabel Extrabold", sans-serif !important;
+}
+
+body,
+a {
+    font-family: "Montserrat", serif !important;
+}
+
 .select2-container--default
     .select2-selection--single
     .select2-selection__arrow
