@@ -54,6 +54,16 @@
                         </div>
 
                         <div class="form-group col-12">
+                            <label>Platform<span class="text-danger">*</span></label>
+                            <select name="platform_id" id="platform_id" class="form-control select2">
+                                <option value="">{{__('admin.Select')}}</option>
+                                @foreach ($platforms  as $platform)
+                                <option value="{{ $platform->id }}">{{ $platform->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group col-12">
                             <label>{{__('admin.Description')}} <span class="text-danger">*</span></label>
                             <textarea name="description" id="" class="summernote" cols="30" rows="10"></textarea>
                         </div>

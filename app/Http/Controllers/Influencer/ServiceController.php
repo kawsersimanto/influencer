@@ -15,6 +15,7 @@ use Modules\Service\Entities\Category;
 use Modules\Service\Entities\CategoryTranslation;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Platform;
 use App\Models\Review;
 
 use Illuminate\Pagination\Paginator;
@@ -82,8 +83,9 @@ class ServiceController extends Controller
     public function create()
     {
         $categories = Category::with('translate')->where('status', 'active')->get();
+        $platforms = Platform::all();
 
-        return view('influencer.service_create', compact('categories'));
+        return view('influencer.service_create', compact('categories', "platforms" ));
     }
 
     public function store(Request $request)
@@ -94,6 +96,7 @@ class ServiceController extends Controller
             'slug' => 'required|unique:services',
             'price' => 'required|numeric',
             'category_id' => 'required',
+            'platform_id' => 'required',
             'description' => 'required',
         ],[
             'image.required' => trans('admin_validation.Image is required'),
@@ -102,6 +105,7 @@ class ServiceController extends Controller
             'slug.unique' => trans('admin_validation.Slug already exist'),
             'price.required' => trans('admin_validation.Price is required'),
             'category_id.required' => trans('admin_validation.Category is required'),
+            'platform_id.required' => trans('Platform is required'),
             'description.required' => trans('admin_validation.Description is required')
         ]);
 
