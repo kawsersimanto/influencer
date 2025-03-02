@@ -6,8 +6,15 @@
   <meta name="description" content="{{ $seo_setting->seo_description }}">
 @endsection
 @section('frontend-content')
+
+<section class="pt-10 banner-brandfam">
+<div class="container">
+  <img src="{{ asset("frontend/banner-brandfam.jpg") }}" alt="Banner">
+</div>
+</section>
+
 <!-- inflanar Hero -->
-<section class="pt-40">
+<section class="pt-20">
   <div class="container">
     <div class="flex flex-col justify-center">
       <h1 class="text-center md:text-[41px] text-[34px] font-bold">Influencer Marketing Made Easy</h1>
