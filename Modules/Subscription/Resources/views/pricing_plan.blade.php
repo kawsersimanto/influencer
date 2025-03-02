@@ -28,7 +28,7 @@
 <!-- End breadcrumbs -->
 <!-- Subscription Plan -->
 <section class="pd-top-120 pd-btm-120">
-   <div class="container">
+   <div class="max-w-[1240px] mx-auto">
       <div class="row">
          <div class="col-12">
             <div class="row">
@@ -52,9 +52,9 @@
             role="tabpanel"
             aria-labelledby="home-tab"
             tabindex="0">
-            <div class="row">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
                @foreach ($plans as $index => $plan )
-               <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+               <div class="">
                   <div class="pricing-pack highlighted">
                      <div class="price-header-wrapper">
                         <div
