@@ -17,7 +17,7 @@
                                 <div class="inflanar-signin__header mg-btm-10">
                                     <div class="inflanar-signin__heading">
                                         <h4 class="inflanar-signin__title">{{__('admin.SignUp')}}</h4>
-                                        <p class="inflanar-signin__tag">{{__('admin.Welcome to Inflanar')}}</p>
+                                        <p class="inflanar-signin__tag">Welcome to Brandfam</p>
                                     </div>
                                     <div class="inflanar-signin__heading__options">
                                         <!--Tab Nav -->
