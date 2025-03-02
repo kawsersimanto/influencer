@@ -7,7 +7,7 @@
 @endsection
 @section('frontend-content')
 
-<section class="pt-10 banner-brandfam">
+<section class="lg:pt-10 pt-20 banner-brandfam">
 <div class="container">
   <img src="{{ asset("frontend/banner-brandfam.jpg") }}" alt="Banner">
 </div>
