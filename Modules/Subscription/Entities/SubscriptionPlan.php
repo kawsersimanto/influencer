@@ -9,7 +9,7 @@ class SubscriptionPlan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['features'];
+    protected $fillable = ['features', 'non_features'];
     
     protected static function newFactory()
     {

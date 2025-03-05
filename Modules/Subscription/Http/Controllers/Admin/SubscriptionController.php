@@ -54,6 +54,7 @@ class SubscriptionController extends Controller
         $plan->serial = $request->serial;
         $plan->status = $request->status;
         $plan->features = $request->features;
+        $plan->non_features = $request->non_features;
         $plan->save();
 
         $notification = trans('admin_validation.Create Successfully');
@@ -100,6 +101,7 @@ class SubscriptionController extends Controller
         $plan->serial = $request->serial;
         $plan->status = $request->status;
         $plan->features = $request->features;
+        $plan->non_features = $request->non_features;
         $plan->save();
 
         $notification = trans('admin_validation.Update Successfully');

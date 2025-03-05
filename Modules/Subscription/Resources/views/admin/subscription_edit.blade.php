@@ -74,6 +74,11 @@
                                         <textarea name="features" id="" cols="30" rows="10" class="summernote">{{ $plan->features }}</textarea>
                                     </div>
 
+                                    <div class="form-group col-12">
+                                        <label>Not included features<span class="text-danger">*</span></label>
+                                        <textarea name="non_features" id="" cols="30" rows="10" class="summernote">{{ $plan->non_features }}</textarea>
+                                    </div>
+
                                     <div class="form-group col-md-12">
                                         <button type="submit" class="btn btn-primary">{{__('admin.Update')}}</button>
                                     </div>

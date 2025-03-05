@@ -265,3 +265,27 @@ body {
 .inflanar-header {
     background-color: white;
 }
+
+.pack-content ul li::before {
+    content: "\f00c"; /* FontAwesome checkmark */
+    font-family: "Font Awesome 6 Free"; /* Ensure correct FontAwesome version */
+    font-weight: 900; /* Needed for solid icons */
+    color: var(--theme-primary); /* Change color */
+    display: inline-block;
+    width: 1em; /* Adjust spacing */
+    margin-right: 8px;
+}
+
+.non-features ul li::before {
+    content: "\f00d"; /* FontAwesome 'times' (cross) icon */
+    font-family: "Font Awesome 6 Free"; /* Ensure correct FontAwesome version */
+    font-weight: 900; /* Needed for solid icons */
+    color: #d5d5d5; /* Change to your desired color */
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.non-features ul li {
+    text-decoration: line-through;
+    color: #d5d5d5;
+}
