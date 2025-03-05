@@ -31,7 +31,7 @@
                                 @foreach ($admins as $index => $admin)
                                     <tr>
                                         <td>{{ ++$index }}</td>
-                                        <td>{{ $admin->name }}</td>
+                                      <td>{{ $admin->name }}</td>
                                         <td>{{ $admin->email }}</td>
 
                                         <td>

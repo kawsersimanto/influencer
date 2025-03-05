@@ -44,7 +44,6 @@ class SubscriptionController extends Controller
             'expiration_date.required' => trans('admin_validation.Expiration date is required'),
             'maximum_service.required' => trans('admin_validation.Maximum service is required'),
             'serial.required' => trans('admin_validation.Serial is required')
-
         ]);
 
         $plan = new SubscriptionPlan();
@@ -54,6 +53,7 @@ class SubscriptionController extends Controller
         $plan->maximum_service = $request->maximum_service;
         $plan->serial = $request->serial;
         $plan->status = $request->status;
+        $plan->features = $request->features;
         $plan->save();
 
         $notification = trans('admin_validation.Create Successfully');
@@ -99,6 +99,7 @@ class SubscriptionController extends Controller
         $plan->maximum_service = $request->maximum_service;
         $plan->serial = $request->serial;
         $plan->status = $request->status;
+        $plan->features = $request->features;
         $plan->save();
 
         $notification = trans('admin_validation.Update Successfully');
