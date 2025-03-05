@@ -335,21 +335,22 @@
     <div class="grid md:grid-cols-2 grid-cols-1 gap-[80px]">
       <div class="flex flex-col items-start">
         <span class="px-4 py-2 rounded-[12px] shadow-light-shadow bg-peach-gold-gradient font-agrandir">Search</span>
-        <h2 class="font-semibold text-3xl md:mt-5 mt-3 md:mb-16 mb-10">Find and Hire Influencers in Seconds on the Marketplace</h2>
+        <h2 class="font-semibold text-3xl md:mt-5 mt-3 md:mb-16 mb-10">Quickly Discover and Recruit Influencers on the Marketplace</h2>
         <div class="flex flex-col md:gap-12 gap-8">
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Search Influencer</h3>
-            <p>Search thousands of vetted Instagram, TikTok, and YouTube influencers.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Find Influencers</h3>
+            <p>Browse through a wide selection of verified influencers from Instagram, TikTok, and YouTube.</p>
           </div>
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Purchase & Chat Securely</h3>
-            <p>Safely purchase and communicate through Collabstr. We hold your payment until the work is completed.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Buy & Communicate Safely</h3>
+            <p>Make secure purchases and interact through Collabstr, with payment held until the work is done.</p>
           </div>
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Receive Quality Content</h3>
-            <p>Receive your high-quality content from influencers directly through the platform.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Get High-Quality Content</h3>
+            <p>Receive top-notch content directly from influencers on the platform.</p>
           </div>
         </div>
+        
       </div>
       <div>
         <img src="{{ asset("frontend/new-img/marketplace.png") }}" alt="Find and Hire Influencers in Seconds on the Marketplace">
@@ -358,25 +359,26 @@
     <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-5 gap-3 lg:pt-32 pt-20">
       <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
         <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
-        <h3 class="font-semibold text-xl">No Upfront Cost</h3>
-        <p class="text-sm">Search influencers for free. No subscriptions, contracts or hidden fees.</p>
+        <h3 class="font-semibold text-xl">No Initial Payment</h3>
+        <p class="text-sm">Explore influencers without any charges. No hidden fees, subscriptions, or contracts.</p>
       </div>
       <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
-        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
-        <h3 class="font-semibold text-xl">Vetted Influencers</h3>
-        <p class="text-sm">Instantly chat with influencers and stay in touch throughout the whole transaction.</p>
+        <i class="fa-solid fa-circle-check text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">Verified Influencers</h3>
+        <p class="text-sm">Chat directly with influencers and keep in touch throughout the entire process.</p>
       </div>
       <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
-        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
-        <h3 class="font-semibold text-xl">Instant Chat</h3>
-        <p class="text-sm">Instantly chat with influencers and stay in touch throughout the whole transaction.</p>
+        <i class="fa-solid fa-comments text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">Real-Time Messaging</h3>
+        <p class="text-sm">Communicate instantly with influencers and manage the entire process smoothly.</p>
       </div>
       <div class="shadow-light-shadow rounded-lg flex flex-col gap-2 p-4 border-l-2 border-l-main">
-        <i class="fa-solid fa-dollar-sign text-main text-3xl"></i>
-        <h3 class="font-semibold text-xl">Secure Purchases</h3>
-        <p class="text-sm">Your money is held safely until you approve the influencer’s work.</p>
+        <i class="fa-solid fa-credit-card text-main text-3xl"></i>
+        <h3 class="font-semibold text-xl">Safe Payments</h3>
+        <p class="text-sm">Funds are securely held until you approve the influencer’s final work.</p>
       </div>
     </div>
+    
   </div>
 </section>
 {{-- search and features --}}
@@ -390,22 +392,23 @@
       </div>
       <div class="flex flex-col items-start">
         <span class="px-4 py-2 rounded-[12px] shadow-light-shadow bg-peach-gold-gradient font-agrandir">Campaigns</span>
-        <h2 class="font-semibold text-3xl md:mt-8 mt-3 md:mb-16 mb-10">Post Campaigns and Have 170,000+ Influencers Come to You</h2>
+        <h2 class="font-semibold text-3xl md:mt-8 mt-3 md:mb-16 mb-10">Launch Campaigns and Attract Over 170,000 Influencers</h2>
         <div class="flex flex-col md:gap-12 gap-8">
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Set Targeting</h3>
-            <p>Specify demographics including niche, location and following size of the influencers you want to target.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Define Your Audience</h3>
+            <p>Set targeting criteria such as niche, location, and follower count of influencers you want to reach.</p>
           </div>
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Post Campaign</h3>
-            <p>Centralize your images, requirements, and more in a campaign brief sent to 170,000 influencers.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Create Campaign</h3>
+            <p>Compile your images, requirements, and other details into a campaign brief that goes out to 170,000 influencers.</p>
           </div>
           <div>
             <h3 class="text-[20px] text-black font-semibold mb-2">Influencers Apply</h3>
-            <p>Targeted influencers submit their pricing, and you choose who to collaborate with.</p>
+            <p>Influencers that match your criteria will submit their rates, allowing you to choose your collaborators.</p>
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </section>
@@ -417,24 +420,24 @@
     <div class="grid md:grid-cols-2 grid-cols-1 gap-[80px]">
       <div class="flex flex-col items-start">
         <span class="px-4 py-2 rounded-[12px] shadow-light-shadow bg-peach-gold-gradient font-agrandir">Track</span>
-        <h2 class="font-semibold text-3xl md:mt-5 mt-3 md:mb-16 mb-10">Track Post Analytics and Performance in Real Time</h2>
+        <h2 class="font-semibold text-3xl md:mt-5 mt-3 md:mb-16 mb-10">Monitor Post Analytics and Performance in Real Time</h2>
         <div class="flex flex-col md:gap-12 gap-8">
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">One-Click Tracking</h3>
-            <p>Track Instagram, TikTok, and YouTube content in real time from a single dashboard. Say goodbye to manual tracking and messy spreadsheets.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Easy Tracking</h3>
+            <p>Monitor Instagram, TikTok, and YouTube content performance from one central dashboard. Forget about manual tracking and spreadsheets.</p>
           </div>
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Advanced Analytics & Reporting</h3>
-            <p>Analyze content performance over time, including impressions, engagement and more. Organize performance by campaign and effortlessly build reports.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">In-Depth Analytics & Reports</h3>
+            <p>Track content performance trends, including impressions and engagement, and generate reports effortlessly by campaign.</p>
           </div>
           <div>
-            <h3 class="text-[20px] text-black font-semibold mb-2">Fully Automated</h3>
-            <p>Metrics are updated every 24 hours, ensuring performance data is always up-to-date.</p>
+            <h3 class="text-[20px] text-black font-semibold mb-2">Completely Automated</h3>
+            <p>Data is refreshed every 24 hours, ensuring you're always viewing the latest performance insights.</p>
           </div>
         </div>
       </div>
       <div>
-        <img src="{{ asset("frontend/new-img/tracking.png") }}" alt="Find and Hire Influencers in Seconds on the Marketplace">
+        <img src="{{ asset("frontend/new-img/tracking.png") }}" alt="Monitor Influencer Analytics in Real Time">
       </div>
     </div>
   </div>
@@ -442,7 +445,7 @@
 {{-- Track --}}
 
 <!-- About section -->
-<section
+{{-- <section
 class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-top-90 pd-btm-120 inflanar-section-shape2">
 <div class="container inflanar-container-medium">
 <div class="row align-items-center">
@@ -466,7 +469,7 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
 </div>
 </div>
 </div>
-</section>
+</section> --}}
 <!-- About section -->
 
 <!-- Trusted By 110, 000+ Brands -->
@@ -476,10 +479,10 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
     <!-- Section Title -->
     <div class="mb-4">
       <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
-        Trusted By 110, 000+ Brands
+        Trusted by Over 110,000 Brands
       </h2>
-      <p>View collaborations from brands like Wealthsimple, Hopper, Deezer, and more.</p>
-    </div>
+      <p>Explore collaborations with brands such as Wealthsimple, Hopper, Deezer, and many more.</p>
+    </div>    
     <a href="/influencers" class="underline font-agrandir flex-shrink-0">View All</a>
   </div>
   <div class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-4">
@@ -567,32 +570,32 @@ class="video-cta inflanar-section-shape3 inflanar-ohidden inflanar-bg-cover pd-t
     <!-- Section Title -->
     <div class="flex justify-between items-center mb-12">
       <h2 class="text-2xl font-semibold font-agrandir text-black" data-aos="fade-in" data-aos-delay="300">
-        110,000+ Brands Work With Influencers on Brandfam
+        Over 110,000 Brands Collaborate with Influencers on Brandfam
       </h2>
     </div>
     <div class="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-12">
       <div class="flex flex-col gap-4">
         <div>
           <i class="fa-solid fa-quote-left text-3xl mb-2 text-main"></i>
-          <h3 class="italic font-semibold text-black">5 stars from a creator and a brand</h3>
+          <h3 class="italic font-semibold text-black">5 Stars from Both Creators and Brands</h3>
         </div>
-        <p>I've used Brandfam from both the Creator side and the Brand side! It is extremely user-friendly and has lead to some great relationships with creators/brands I wouldn't have been connected to otherwise. Love the platform!</p>
+        <p>I've used Brandfam as both a creator and a brand! It's incredibly user-friendly and has led to amazing connections with creators and brands that I wouldn't have met otherwise. I love this platform!</p>
         <p class="italic font-semibold text-black">Layla - Influencer & Founder</p>
       </div>
       <div class="flex flex-col gap-4">
         <div>
           <i class="fa-solid fa-quote-left text-3xl mb-2 text-main"></i>
-          <h3 class="italic font-semibold text-black">Best platform to connect with influencers</h3>
+          <h3 class="italic font-semibold text-black">The Best Platform to Connect with Influencers</h3>
         </div>
-        <p>Best platform to connect with influencers and content creators. I've signed up to many platforms, collabstr is the easiest to use and gives the best results for my brand.</p>
+        <p>This is the best platform for connecting with influencers and content creators. I've tried many platforms, but Collabstr is by far the easiest to use and delivers the best results for my brand.</p>
         <p class="italic font-semibold text-black">Myriam - Founder of BBeyond</p>
       </div>
       <div class="flex flex-col gap-4">
         <div>
           <i class="fa-solid fa-quote-left text-3xl mb-2 text-main"></i>
-          <h3 class="italic font-semibold text-black">Great way to generate content</h3>
+          <h3 class="italic font-semibold text-black">A Fantastic Way to Generate Content</h3>
         </div>
-        <p>Been using Collabstr to generate content for our seasonal clothing lines. Super easy for us to search for relevant influencers and pay them. We save at least 10-20 hours a month on this.</p>
+        <p>We've been using Collabstr to generate content for our seasonal clothing lines. It's super easy to search for the right influencers and pay them. We save at least 10-20 hours a month doing this.</p>
         <p class="italic font-semibold text-black">Courtney - Marketer</p>
       </div>
     </div>
