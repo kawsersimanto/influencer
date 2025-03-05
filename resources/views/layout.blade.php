@@ -374,11 +374,11 @@
 @yield('frontend-content')
 
 <!-- Footer -->
-<footer class="footer-area pt-20">
+<footer class="footer-area pt-20 bg-main">
   <div class="container">
     <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 pb-16">
       <div class="single-widget footer-useful-links">
-        <h3 class="font-semibold text-white mb-2 text-xl">Resources</h3>
+        <h3 class="font-semibold text-black mb-2 text-xl">Resources</h3>
         <ul class="flex flex-col gap-2">
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Blog</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Resource Hub</a></li>
@@ -388,7 +388,7 @@
         </ul>
       </div>
       <div class="single-widget footer-useful-links">
-        <h3 class="font-semibold text-white mb-2 text-xl">Tools</h3>
+        <h3 class="font-semibold text-black mb-2 text-xl">Tools</h3>
         <ul class="flex flex-col gap-2">
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Price Calculator</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Fake Follower Checker</a></li>
@@ -403,7 +403,7 @@
         </ul>
       </div>
       <div class="single-widget footer-useful-links">
-        <h3 class="font-semibold text-white mb-2 text-xl">Discover</h3>
+        <h3 class="font-semibold text-black mb-2 text-xl">Discover</h3>
         <ul class="flex flex-col gap-2">
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Find Influencers</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Top Influencers</a></li>
@@ -412,7 +412,7 @@
         </ul>
       </div>
       <div class="single-widget footer-useful-links">
-        <h3 class="font-semibold text-white mb-2 text-xl">Support</h3>
+        <h3 class="font-semibold text-black mb-2 text-xl">Support</h3>
         <ul class="flex flex-col gap-2">
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Contact Us</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">How It Works</a></li>
@@ -428,7 +428,7 @@
         <div class="col-12">
           <div class="copyright__inner">
             <!-- Copyright Text -->
-            <p class="copyright-text !text-[12px] font-normal font-agrandir !text-[rgba(255,255,255,0.41)]">{{ $setting->copyright }}</p>
+            <p class="copyright-text !text-[12px] font-normal font-agrandir !text-black">{{ $setting->copyright }}</p>
             <!-- Social -->
             <ul class="inflanar-social inflanar-social__v2">
               @if ($setting->twitter)

@@ -310,3 +310,22 @@ body {
     color: black !important;
     border: 1px solid var(--theme-primary) !important;
 }
+
+.footer-area {
+    background-image: unset;
+    color: #000;
+}
+
+.footer-area ul li a {
+    /* background-image: unset; */
+    color: #000 !important;
+}
+
+.footer-area ul:not(.inflanar-social) li a:hover {
+    color: #1c1c1c !important;
+    text-decoration: underline;
+}
+
+.footer-area .inflanar-social li a:hover {
+    color: white !important;
+}
