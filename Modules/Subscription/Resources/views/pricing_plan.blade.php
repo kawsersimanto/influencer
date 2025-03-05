@@ -47,55 +47,115 @@
         </div>
       </div>
 
-      <div class="tab-content mg-top-30" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-          tabindex="0">
-          <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
-            {{-- {{ dd($plans) }} --}}
-            @foreach ($plans as $index => $plan)
-              <div class="">
-                <div class="pricing-pack highlighted">
-                  <div class="price-header-wrapper">
-                    <div
-                      class="position-relative price-header d-flex justify-content-center flex-column align-items-center">
-                      <h4 class="pack-name">{{ $plan->plan_name }}</h4>
-                      <div class="price-circle">
-                        <p class="m-0 pack-price">
-                          {{ $setting->currency_icon }}{{ $plan->plan_price }}
-                          <br>
-                          <span class="pack-duration uppercase">
-                            {{ $plan->expiration_date }}
-                          </span>
-                        </p>
-
+      <div class="container mt-5">
+        <!-- Nav Pills for Monthly and Yearly -->
+        <ul class="nav nav-pills mb-8 justify-center gap-2" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active pricing-tab" id="pills-monthly-tab" data-bs-toggle="pill" data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly" aria-selected="true">Monthly</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link pricing-tab" id="pills-yearly-tab" data-bs-toggle="pill" data-bs-target="#pills-yearly" type="button" role="tab" aria-controls="pills-yearly" aria-selected="false">Yearly</button>
+          </li>
+        </ul>
+      
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <!-- Monthly Plans -->
+          <div class="tab-pane fade show active" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
+            <div class="row">
+              @foreach ($plans as $plan)
+                @if ($plan->expiration_date == 'monthly')
+                  <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="pricing-pack highlighted flex flex-column h-full">
+                      <div class="price-header-wrapper">
+                        <div class="position-relative price-header d-flex justify-content-center flex-column align-items-center">
+                          <h4 class="pack-name">{{ $plan->plan_name }}</h4>
+                          <div class="price-circle">
+                            <p class="m-0 pack-price">
+                              {{ $setting->currency_icon }}{{ $plan->plan_price }}
+                              <br>
+                              <span class="pack-duration uppercase">
+                                {{ $plan->expiration_date }}
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                        <svg class="price-shape" width="307" height="193" viewBox="0 0 307 193" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M45.8004 119.05C64.0918 119.05 80.3605 130.217 87.4876 147.093C98.72 173.677 124.991 192.33 155.622 192.33C186.254 192.33 212.05 173.083 223.28 146.499C230.41 129.624 240.225 119.05 265.442 119.05L362.825 119.05L362.825 -0.00178528L-55.811 -0.00182188L-55.811 119.05L45.8004 119.05Z"
+                            fill="#FE2C55" />
+                        </svg>
+                      </div>
+                      <div class="pack-content d-flex flex-column align-items-center">
+                        {!! $plan->features !!}
+                        <span class="non-features">
+                          {!! $plan->non_features !!}
+                        </span>
+                      </div>
+                      <div class="pack-btn-wrapper mt-auto">
+                        @if ($plan->plan_price == 0)
+                          <a class="pack-action-btn highlighted-btn"
+                            href="{{ route('subscription.free-enroll', $plan->id) }}">Get Started</a>
+                        @else
+                          <a class="pack-action-btn highlighted-btn"
+                            href="{{ route('subscription-payment', $plan->id) }}">Get Started</a>
+                        @endif
                       </div>
                     </div>
-                    <svg class="price-shape" width="307" height="193" viewBox="0 0 307 193" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M45.8004 119.05C64.0918 119.05 80.3605 130.217 87.4876 147.093C98.72 173.677 124.991 192.33 155.622 192.33C186.254 192.33 212.05 173.083 223.28 146.499C230.41 129.624 240.225 119.05 265.442 119.05L362.825 119.05L362.825 -0.00178528L-55.811 -0.00182188L-55.811 119.05L45.8004 119.05Z"
-                        fill="#FE2C55" />
-                    </svg>
                   </div>
-                  <div class="pack-content d-flex flex-column align-items-center">
-                    {!! $plan->features !!}
-                    <span class="non-features">
-
-                      {!! $plan->non_features !!}
-                    </span>
+                @endif
+              @endforeach
+            </div>
+          </div>
+      
+          <!-- Yearly Plans -->
+          <div class="tab-pane fade" id="pills-yearly" role="tabpanel" aria-labelledby="pills-yearly-tab">
+            <div class="row">
+              @foreach ($plans as $plan)
+                @if ($plan->expiration_date == 'yearly')
+                  <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <div class="pricing-pack highlighted flex flex-column h-full">
+                      <div class="price-header-wrapper">
+                        <div class="position-relative price-header d-flex justify-content-center flex-column align-items-center">
+                          <h4 class="pack-name">{{ $plan->plan_name }}</h4>
+                          <div class="price-circle">
+                            <p class="m-0 pack-price">
+                              {{ $setting->currency_icon }}{{ $plan->plan_price }}
+                              <br>
+                              <span class="pack-duration uppercase">
+                                {{ $plan->expiration_date }}
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                        <svg class="price-shape" width="307" height="193" viewBox="0 0 307 193" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M45.8004 119.05C64.0918 119.05 80.3605 130.217 87.4876 147.093C98.72 173.677 124.991 192.33 155.622 192.33C186.254 192.33 212.05 173.083 223.28 146.499C230.41 129.624 240.225 119.05 265.442 119.05L362.825 119.05L362.825 -0.00178528L-55.811 -0.00182188L-55.811 119.05L45.8004 119.05Z"
+                            fill="#FE2C55" />
+                        </svg>
+                      </div>
+                      <div class="pack-content d-flex flex-column align-items-center">
+                        {!! $plan->features !!}
+                        <span class="non-features">
+                          {!! $plan->non_features !!}
+                        </span>
+                      </div>
+                      <div class="pack-btn-wrapper mt-auto">
+                        @if ($plan->plan_price == 0)
+                          <a class="pack-action-btn highlighted-btn"
+                            href="{{ route('subscription.free-enroll', $plan->id) }}">Get Started</a>
+                        @else
+                          <a class="pack-action-btn highlighted-btn"
+                            href="{{ route('subscription-payment', $plan->id) }}">Get Started</a>
+                        @endif
+                      </div>
+                    </div>
                   </div>
-                  <div class="pack-btn-wrapper">
-                    @if ($plan->plan_price == 0)
-                      <a class="pack-action-btn highlighted-btn"
-                        href="{{ route('subscription.free-enroll', $plan->id) }}">Get Started</a>
-                    @else
-                      <a class="pack-action-btn highlighted-btn"
-                        href="{{ route('subscription-payment', $plan->id) }}">Get Started</a>
-                    @endif
-                  </div>
-                </div>
-              </div>
-            @endforeach
+                @endif
+              @endforeach
+            </div>
           </div>
         </div>
       </div>

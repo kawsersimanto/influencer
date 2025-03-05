@@ -266,6 +266,13 @@ body {
     background-color: white;
 }
 
+.pack-content li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
 .pack-content ul li::before {
     content: "\f00c"; /* FontAwesome checkmark */
     font-family: "Font Awesome 6 Free"; /* Ensure correct FontAwesome version */
@@ -279,7 +286,7 @@ body {
 .non-features ul li::before {
     content: "\f00d"; /* FontAwesome 'times' (cross) icon */
     font-family: "Font Awesome 6 Free"; /* Ensure correct FontAwesome version */
-    font-weight: 900; /* Needed for solid icons */
+    font-weight: 700; /* Needed for solid icons */
     color: #d5d5d5; /* Change to your desired color */
     display: inline-block;
     margin-right: 8px;
@@ -288,4 +295,18 @@ body {
 .non-features ul li {
     text-decoration: line-through;
     color: #d5d5d5;
+}
+
+.pack-content {
+    padding: 40px;
+}
+
+.pricing-tab.active {
+    background-color: var(--theme-primary) !important;
+    color: black !important;
+}
+
+.pricing-tab {
+    color: black !important;
+    border: 1px solid var(--theme-primary) !important;
 }
