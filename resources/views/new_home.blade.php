@@ -17,10 +17,7 @@
 <section class="pt-20">
   <div class="container">
     <div class="flex flex-col justify-center">
-      <h1 class="text-center md:text-[41px] text-[34px] font-bold">Influencer Marketing Made Easy</h1>
       <div>
-        <p class="text-center mt-4 mb-12">Find and hire top Instagram, TikTok, YouTube, and UGC influencers to create
-          unique content for your brand</p>
         <form action="{{ route('services', 'search, categories') }}"
           class="shadow-light-shadow sm:rounded-[50px] rounded-[24px] max-w-[1200px] mx-auto gap-2 flex sm:flex-row flex-col items-center p-2 home-search"
           method="GET">
