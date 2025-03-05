@@ -343,7 +343,7 @@
                       <li><a href="{{ route('contact-us') }}">{{ __('admin.Contact') }}</a></li>
                       @guest('web')
                         <a href="{{ route('login') }}" class="me-3"><span>
-                            Join as Creator</span></a>
+                            Join as Brand</span></a>
                         <a href="{{ route('login') }}" class=""><span>
                             Join as Influencer</span></a>
                       @else
