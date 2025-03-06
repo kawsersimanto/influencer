@@ -10,7 +10,7 @@
   <section class="pt-40">
     <div class="container">
       <div class="flex flex-col justify-center">
-        <h1 class="text-center md:text-[41px] text-[34px] font-bold">Influencer Marketing Made Easy</h1>
+        <h1 class="text-center md:text-[41px] text-[34px] font-bold">Simplifying Influencer Marketing</h1>
         <div>
           <p class="text-center mt-4 mb-12">Find and hire top Instagram, TikTok, YouTube, and UGC influencers to create
             unique content for your brand</p>
