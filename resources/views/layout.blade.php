@@ -301,7 +301,7 @@
                       </li>
                       @guest('web')
                         <a href="{{ route('login') }}" class="me-3 text-[#F7BEA4]"><span>
-                            Join as Creator</span></a>
+                            Join as Brand</span></a>
                         <a href="{{ route('login') }}" class="text-[#F7BEA4]"><span>
                             Join as Influencer</span></a>
                       @else
