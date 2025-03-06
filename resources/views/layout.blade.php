@@ -16,9 +16,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
-    {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
@@ -177,99 +178,33 @@
       <nav id="offcanvas-menu" class="offcanvas-menu">
         <!-- Main Menu -->
         <ul class="nav-menu menu navigation list-none">
-
-          @if ($setting->selected_theme == 'all_theme')
-            <li class="menu-item-has-children active"><a
-                href="{{ route('home', ['theme' => 'one']) }}">{{ __('admin.Home') }}</a>
-              <ul class="sub-menu">
-                <li><a href="{{ route('home', ['theme' => 'one']) }}">{{ __('admin.Homepage V1') }}</a></li>
-                <li><a href="{{ route('home', ['theme' => 'two']) }}">{{ __('admin.Homepage V2') }}</a></li>
-                <li><a href="{{ route('home', ['theme' => 'three']) }}">{{ __('admin.Homepage V3') }}</a></li>
-              </ul>
-            </li>
+          <li><a href="/">Home</a></li>
+          <li><a href="{{ route('search.index') }}">Search</a></li>
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="{{ route('pricing-plan') }}">Pricing</a></li>
+          <li><a href="{{ route('login') }}">Login</a></li>
+          @guest('web')
+            <a href="{{ route('login') }}" class="text-[#F7BEA4] font-semibold block text-center border !border-main py-2 rounded-lg mb-2 mt-5"><span>
+                Join as Brand</span></a>
+            <a href="{{ route('login') }}" class="text-[#F7BEA4] font-semibold block text-center border !border-main py-2 rounded-lg"><span>
+                Join as Influencer</span></a>
           @else
-            <li><a href="{{ route('home') }}">{{ __('admin.Home') }}</a></li>
-          @endif
-
-          <li><a href="{{ route('about-us') }}">{{ __('admin.About Us') }}</a></li>
-
-          <li><a href="{{ route('influencers') }}">{{ __('admin.Influencers') }}</a></li>
-
-          <li><a href="{{ route('services') }}">{{ __('admin.Services') }}</a></li>
-
-          <li class="menu-item-has-children"><a href="#">{{ __('admin.Pages') }}</a>
-            <ul class="sub-menu">
-              @if ($setting->commission_type == 'subscription')
-                @php
-                  $json_module_data = file_get_contents(base_path('modules_statuses.json'));
-                  $module_status = json_decode($json_module_data);
-                @endphp
-
-                @if ($module_status->Subscription)
-                  <li>
-                    <a class="{{ Route::is('pricing-plan') ? 'active' : '' }}"
-                      href="{{ route('pricing-plan') }}">{{ __('admin.Subscription') }}</a>
-                  </li>
-                @endif
-              @endif
-              <li><a href="{{ route('blogs') }}">{{ __('admin.Our Blogs') }}</a></li>
-              <li><a href="{{ route('faq') }}">{{ __('admin.FAQ') }}</a></li>
-              <li><a href="{{ route('terms-conditions') }}">{{ __('admin.Terms & Conditions') }}</a></li>
-              <li><a href="{{ route('privacy-policy') }}">{{ __('admin.Privacy Policy') }}</a></li>
-              @foreach ($custom_pages as $custom_page)
-                <li><a href="{{ route('custom-page', $custom_page->slug) }}">{{ $custom_page->page_name }}</a></li>
-              @endforeach
-
-            </ul>
-          </li>
-
-          <li><a href="{{ route('contact-us') }}">{{ __('admin.Contact') }}</a></li>
+            @php
+              $auth_user = Auth::guard('web')->user();
+            @endphp
+            @if ($auth_user->is_influencer == 'yes')
+              <a href="{{ route('influencer.dashboard') }}"
+                class="inflanar-btn inflanar-btn--header"><span>{{ __('admin.Dashboard') }}</span></a>
+            @else
+              <a href="{{ route('user.dashboard') }}"
+                class="inflanar-btn inflanar-btn--header"><span>{{ __('admin.Dashboard') }}</span></a>
+            @endif
+          @endguest
         </ul>
         <!-- End Main Menu -->
       </nav>
       <!-- offcanvas-menu end -->
 
-      <div class="inflanar-header__button h-with-lang-switch mobile ">
-        <div class="currency-item">
-          <i class="fa-solid fa-dollar-sign"></i>
-          <!-- Currency Dropdown -->
-          <select class="form-select form-select-lg mb-3 inflanar-header__lang--list"
-            aria-label=".form-select-lg example">
-            @if (Session::get('currency_code'))
-              @foreach ($currency_list as $currency_item)
-                <option {{ Session::get('currency_code') == $currency_item->lang_code ? 'selected' : '' }}
-                  value="{{ $currency_item->currency_code }}">{{ $currency_item->currency_name }}</option>
-              @endforeach
-            @else
-              @foreach ($currency_list as $currency_item)
-                <option value="{{ $currency_item->currency_code }}">{{ $currency_item->currency_name }}</option>
-              @endforeach
-            @endif
-
-          </select>
-        </div>
-
-        <div class="qnav-btn-item">
-          <!-- Language Dropdown -->
-          <form action="{{ route('language-switcher') }}" id="lang_swithcer_form_for_mobile">
-            <div class="inflanar-header__lang">
-              <i class="fas fa-globe"></i>
-              <select id="lang_swithcer_for_mobile" class="inflanar-header__lang--list" name="lang_code">
-                @if (Session::get('front_lang'))
-                  @foreach ($language_list as $language)
-                    <option {{ Session::get('front_lang') == $language->lang_code ? 'selected' : '' }}
-                      value="{{ $language->lang_code }}">{{ $language->lang_name }}</option>
-                  @endforeach
-                @else
-                  @foreach ($language_list as $language)
-                    <option value="{{ $language->lang_code }}">{{ $language->lang_name }}</option>
-                  @endforeach
-                @endif
-              </select>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -293,16 +228,16 @@
                     <ul class="nav-menu menu navigation list-none font-agrandir">
                       <li><a href="{{ route('search.index') }}">Search</a>
                       </li>
-                      <li><a href="#how-it-works">How it Works</a>
+                      <li><a href="/#how-it-works">How it Works</a>
                       </li>
                       <li><a href="{{ route('pricing-plan') }}">Pricing</a>
                       </li>
                       <li><a href="{{ route('login') }}">Login</a>
                       </li>
                       @guest('web')
-                        <a href="{{ route('login') }}" class="me-3 text-[#F7BEA4]"><span>
+                        <a href="{{ route('login') }}" class="me-3 text-[#F7BEA4] font-semibold"><span>
                             Join as Brand</span></a>
-                        <a href="{{ route('login') }}" class="text-[#F7BEA4]"><span>
+                        <a href="{{ route('login') }}" class="text-[#F7BEA4] font-semibold"><span>
                             Join as Influencer</span></a>
                       @else
                         @php
@@ -384,20 +319,26 @@
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Resource Hub</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Affiliate Program</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Ebook For Brands</a></li>
-          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">2025 Influencer Marketing Report</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">2025 Influencer Marketing Report</a>
+          </li>
         </ul>
       </div>
       <div class="single-widget footer-useful-links">
         <h3 class="font-semibold text-black mb-2 text-xl">Tools</h3>
         <ul class="flex flex-col gap-2">
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Price Calculator</a></li>
-          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Fake Follower Checker</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Fake Follower Checker</a>
+          </li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Fake Follower Checker</a></li>
-          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Engagement Rate Calculator</a></li>
-          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Engagement Rate Calculator</a></li>
-          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Campaign Brief Template</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Engagement Rate
+              Calculator</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Engagement Rate Calculator</a>
+          </li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Campaign Brief Template</a>
+          </li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Contract Template</a></li>
-          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Analytics & Tracking</a></li>
+          <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Influencer Analytics & Tracking</a>
+          </li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">Instagram Reels Downloader</a></li>
           <li><a href="#" class="text-sm !text-[rgba(255,255,255,0.41)]">TikTok Video Downloader</a></li>
         </ul>
