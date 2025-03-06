@@ -18,10 +18,10 @@
               <!--Tab Nav -->
               <div class="list-group inflanar-signin__options" id="list-tab" role="tablist">
                 <a class="list-group-item active" data-bs-toggle="list" href="#in-tab9" role="tab">
-                  <span>{{ __('admin.Client') }}</span>
+                  <span>Brand</span>
                 </a>
                 <a class="list-group-item" data-bs-toggle="list" href="#in-tab10" role="tab">
-                  <span>{{ __('admin.Influencer') }}</span>
+                  <span>influencer</span>
                 </a>
               </div>
             </div>
